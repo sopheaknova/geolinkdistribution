@@ -1,0 +1,133 @@
+/*  ========= Services Slide ========= */
+ul#list-services li{
+    list-style-type: none;
+    padding: 10px 18px 15px 18px;
+    width: 268px;
+}
+ul#list-services li img{
+    border: 1px solid #ccc;
+}
+ul#list-services li:hover{
+    width: 268px;
+    background: #efefef;
+    z-index: 10;
+    
+    -webkit-box-shadow: 0 1px 2px -6px #888;
+      -moz-box-shadow: 0 1px 2px -6px #888;
+           box-shadow: 0 1px 2px -6px #888;
+}
+
+.jcarousel-skin-tango .jcarousel-container-horizontal {
+    width: 924px; 
+    text-align: center;
+    padding: 20px 18px;
+}
+
+/* Both Services Slide and Clients Slide */
+
+.jcarousel-skin-tango .jcarousel-direction-rtl {
+    direction: rtl;
+}
+.jcarousel-skin-tango .jcarousel-clip {
+    overflow: hidden;
+}
+.jcarousel-skin-tango .jcarousel-item-placeholder {
+    background: #fff;
+    color: #000;
+}
+
+/* End Both */
+
+.jcarousel-skin-tango .jcarousel-clip-horizontal {
+    width:  924px;
+    margin-bottom: 20px;
+    border: 0px solid #ccc;
+    z-index: 30;
+}
+
+.jcarousel-skin-tango .jcarousel-item-horizontal {
+	margin-left: 0;
+    margin-right: 5px;
+}
+
+.jcarousel-skin-tango .jcarousel-direction-rtl .jcarousel-item-horizontal {
+	margin-left: 5px;
+    margin-right: 0;
+}
+
+/**
+ *  Horizontal Navigation
+ */
+.jcarousel-skin-tango .jcarousel-next-horizontal {
+    position: absolute;
+    top: 302px;
+    left: 458px;
+    width: 18px;
+    height: 20px;
+    z-index: 1;
+    cursor: pointer;
+    background: url(arrow-prev-medium.png) no-repeat 0 0;
+}
+
+.jcarousel-skin-tango .jcarousel-prev-horizontal {
+    position: absolute;
+    top: 302px;
+    right: 458px;
+    width: 18px;
+    height: 20px;
+    z-index: 1;
+    cursor: pointer;
+    background: url(arrow-next-medium.png) no-repeat 0 0;
+}
+
+/* ========= Clients Slide ========= */
+.all-clients{
+    margin: 0px 20px 45px 20px;
+}
+.all-clients ul li{
+    width: 130px;
+    padding: 5px 5px;
+    list-style-type: none;
+}
+.all-clients .jcarousel-skin-tango .jcarousel-container-horizontal {
+    width: 870px; 
+    margin: 0px auto;
+    padding: 0px;
+    text-align: center;
+}
+.all-clients .jcarousel-skin-tango .jcarousel-clip-horizontal {
+    width:  870px;
+    z-index: 30;
+}
+.all-clients .jcarousel-skin-tango .jcarousel-item-horizontal {
+    margin-left: 0;
+    margin-right: 5px;
+}
+
+.all-clients .jcarousel-skin-tango .jcarousel-direction-rtl .jcarousel-item-horizontal {
+    margin-left: 5px;
+    margin-right: 0;
+}
+
+/**
+ *  Horizontal Navigation
+ */
+.all-clients .jcarousel-skin-tango .jcarousel-next-horizontal {
+    position: absolute;
+    top: 30px;
+    left: -20px;
+    width: 10px;
+    height: 13px;
+    cursor: pointer;
+    background: url(arrow-prev-small.jpg) no-repeat 0 0;
+}
+
+.all-clients .jcarousel-skin-tango .jcarousel-prev-horizontal {
+    position: absolute;
+    top: 30px;
+    right: -20px;
+    width: 10px;
+    height: 13px;
+    cursor: pointer;
+    background: url(arrow-next-small.jpg) no-repeat 0 0;
+}
