@@ -42,7 +42,7 @@
         <!-- end section -->
         <section>
            <div class="geo-distribution">
-               <h2>Welcome to Geolink Distribution <span class="border-italic"></span></h2>   
+               <h2><span class="white-back">Welcome to Geolink Distribution</span> <span class="border-italic"></span></h2>   
                <p>
                Geolink Distribution makes sure that you have the analysis, support and product growth to efficiently and 
                cost-effectively establish a foothold and supply network within the rapidly emerging yet socio-economically 
@@ -61,7 +61,7 @@
         <!-- end section -->
         <section>
             <div class="geo-services">
-                <h2>Our Services <span class="border-italic"></span></h2>
+                <h2><span class="white-back">Our Services</span> <span class="border-italic"></span></h2>
                 <p>GeolinkGroup currently services exclusive contracts with DHL, Tiger Beer, and a list of all-star references, all of whom have trusted Geolink with their product 
                 distribution for many years. This assures you that we work in a transparent, efficient, cost-effective and professional manner.</p>
             </div>
@@ -107,7 +107,7 @@
             <?php if ( $query->have_posts() ) : ?>
              
             <div class="geo-clients clearfix">
-               <h2>Some of our clients <span class="border-italic"></span></h2>
+               <h2><span class="white-back">Some of our clients</span> <span class="border-italic"></span></h2>
             </div>
 
             <div class="all-clients clearfix">

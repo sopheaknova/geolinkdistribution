@@ -104,7 +104,7 @@ if(isset($_POST['btnsubmit'])) {
 
         <h1 class="title"><?php echo the_title(); ?></h1>
         <section id="content-map">
-            <h2>Find us on the map <span class="border-italic"></span></h2>
+            <h2><span class="white-back">Find us on the map</span> <span class="border-italic"></span></h2>
             <div id="contact-map"> 
             <img src="<?php bloginfo('template_url');?>/images/geolink-map.jpg" alt="geolink-map" />
             </div>
@@ -115,7 +115,7 @@ if(isset($_POST['btnsubmit'])) {
             	<?php //if (have_posts()) while ( have_posts() ): the_post(); ?>
 			    <?php //the_content(); ?>
 		        <?php //endwhile; ?> 
-                <h2>Contact Info <span class="border-italic"></span></h2>
+                <h2><span class="white-back">Contact Info</span> <span class="border-italic"></span></h2>
                 <ul>
                     <li>No.41-43, Norodom Blvd</li>
                     <li>Sankat Phsar Thmey III, Khan Daun Penh,</li>
@@ -127,7 +127,7 @@ if(isset($_POST['btnsubmit'])) {
                 </ul>
             </div>
             <div class="contact-mail">
-                <h2>Get in Touch <span class="border-italic"></span></h2>
+                <h2><span class="white-back">Get in Touch</span> <span class="border-italic"></span></h2>
                 <form class="contact-form" action="" method="post">
 
                 	<?php if(isset($emailSent) && $emailSent == true) { ?>

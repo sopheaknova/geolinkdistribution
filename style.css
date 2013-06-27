@@ -607,9 +607,6 @@ input.placeholder, textarea.placeholder, .wpcf7 .watermark { color: #b0b0b0; }
         width: 640px;
         float: left;
     }
-    .geo-distribution .border-italic{
-        width: 294px;
-    }
     .geo-group{
         float: right;
         text-align: center;
@@ -626,18 +623,13 @@ input.placeholder, textarea.placeholder, .wpcf7 .watermark { color: #b0b0b0; }
         margin: 0px 20px;
         overflow: hidden;
     }
-    .geo-services .border-italic{
-        width: 768px;
-    }
     
     /* Geolink Clients */
     .geo-clients{
         margin: 20px 20px 12px 20px;
         overflow: hidden;
     }
-    .geo-clients .border-italic{
-        width: 700px;  
-    }
+
 /* -------------------------------------------------- */
 /*  Set Border
 /* -------------------------------------------------- */
@@ -645,11 +637,16 @@ input.placeholder, textarea.placeholder, .wpcf7 .watermark { color: #b0b0b0; }
     #content-map .border-italic, .contact-address .border-italic, .contact-mail .border-italic,
     .choose-us .border-italic, .our-mission .border-italic, #about-clients .border-italic
     {
-        margin-top: 1px;
+        margin-top: -18px;
         height: 12px;
         margin-left: 20px;
-        display: inline-block;
-        background: url(images/border-repeat-italic.jpg) repeat-x;
+        display: block;
+        background: url(images/border-repeat-italic.jpg) repeat-x ;
+    }
+
+    .white-back{
+        background: #ffffff;
+        padding-right: 15px;
     }
 /* -------------------------------------------------- */
 /*  h1 title
@@ -670,6 +667,7 @@ input.placeholder, textarea.placeholder, .wpcf7 .watermark { color: #b0b0b0; }
         margin: 30px 20px;
         overflow: hidden;
     } 
+
 
 /* -------------------------------------------------- */
 /*  Set ul li
@@ -697,16 +695,12 @@ input.placeholder, textarea.placeholder, .wpcf7 .watermark { color: #b0b0b0; }
         float: left;
         width: 450px;
     }
-    .choose-us .border-italic{
-        width: 249px;
-    }
+
     .our-mission{
         float: right;
         width: 450px;
     }
-    .our-mission .border-italic{
-        width: 307px;
-    }
+
     .choose-us ul, .our-mission ul{
         margin-top: 15px;
     } 
@@ -718,9 +712,7 @@ input.placeholder, textarea.placeholder, .wpcf7 .watermark { color: #b0b0b0; }
     #about-clients{
         padding-bottom: 100px;
     }
-    #about-clients .border-italic{
-        width: 631px;
-    }
+
     /* Client Comments */
     .client-comments{
         background: url(images/quote.png) no-repeat 0px 0px;
@@ -759,9 +751,7 @@ input.placeholder, textarea.placeholder, .wpcf7 .watermark { color: #b0b0b0; }
     /* -------------------------------------------------- */
     /* Contact
 /* -------------------------------------------------- */
-    #content-map .border-italic{
-        width: 708px;
-    }
+
     #contact-map{
         height:390px;
         margin:20px 0;
@@ -773,9 +763,6 @@ input.placeholder, textarea.placeholder, .wpcf7 .watermark { color: #b0b0b0; }
         color: #696969;
         overflow: hidden;
     }
-    .contact-address .border-italic{
-        width: 126px;
-    }
 
     /* contact mail */
     .contact-mail{
@@ -783,9 +770,7 @@ input.placeholder, textarea.placeholder, .wpcf7 .watermark { color: #b0b0b0; }
         float: right;
         overflow: hidden;
     }
-    .contact-mail .border-italic{
-        width: 480px;
-    }
+
     form.contact-form, .contact-address ul{
         margin: 25px 0px 200px 0px;
     }
