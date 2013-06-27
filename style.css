@@ -508,7 +508,6 @@ input.placeholder, textarea.placeholder, .wpcf7 .watermark { color: #b0b0b0; }
     }
     /* logo and menu*/
     header .logo-and-menu{
-        overflow: visible;
         background: #ff6600;
     }
     header .logo-and-menu .logo{
@@ -522,7 +521,6 @@ input.placeholder, textarea.placeholder, .wpcf7 .watermark { color: #b0b0b0; }
         float: right;
     }
     .logo-and-menu .container{
-       overflow: hidden;
        -webkit-box-shadow: 0 6px 7px -6px #888;
           -moz-box-shadow: 0 6px 7px -6px #888;
                box-shadow: 0 6px 7px -6px #888;
@@ -535,6 +533,8 @@ input.placeholder, textarea.placeholder, .wpcf7 .watermark { color: #b0b0b0; }
 
     nav.main-menu ul{
         padding: 0px;
+        z-index: 10;
+        position: relative;
     }
     nav.main-menu ul li{
         list-style-type: none;
@@ -553,7 +553,30 @@ input.placeholder, textarea.placeholder, .wpcf7 .watermark { color: #b0b0b0; }
         background: #29a329;
         border-bottom: 6px solid #ffff00;
     }
+    nav.main-menu li.menu-item-13 ul{
+        margin-left: 163px;
+    }
+    
+    nav.main-menu li.menu-item-11 ul{
+        margin-left: 460px;
+    }
+    nav.main-menu ul ul.sub-menu{
+        margin-top: 39px;
+        background: #29a329; 
+        position: absolute;
+        z-index: 110;
+    }
 
+    nav.main-menu ul ul li a{
+        display: block;
+        font-size: 12px;
+        padding: 3px 12px;
+    }
+    nav.main-menu ul ul li a:hover, nav.main-menu ul ul li.current-menu-item a{
+        color: #ffff00;
+        background: transparent;
+        border-bottom: none;
+    }
     /* -------------------------------------------------- */
     /* Slideshow
 /* -------------------------------------------------- */
@@ -580,6 +603,9 @@ input.placeholder, textarea.placeholder, .wpcf7 .watermark { color: #b0b0b0; }
     section{
         clear: both;
         overflow: hidden;
+    }
+    .logo-and-menu{
+        overflow: visible;
     }
     .slogan{
        margin: 20px 0px 20px 10px;

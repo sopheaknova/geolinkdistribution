@@ -1,9 +1,9 @@
 jQuery('html').removeClass('no-js').addClass('js');
 jQuery(document).ready(function($){
     // =========== Main Menu ========= //
-    jQuery(".menu-nav ul a").removeAttr('title');
-    jQuery(".menu-nav ul ul").css({display: "none"}); // Opera Fix
-    jQuery(".menu-nav ul li").each(function()
+    jQuery(".main-menu ul a").removeAttr('title');
+    jQuery(".main-menu ul ul").css({display: "none"}); // Opera Fix
+    jQuery(".main-menu ul li").each(function()
         {   
         var jQuerysubmeun = jQuery(this).find('ul:first');
         jQuery(this).hover(function()
