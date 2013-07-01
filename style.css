@@ -509,15 +509,14 @@ input.placeholder, textarea.placeholder, .wpcf7 .watermark { color: #b0b0b0; }
     /* logo and menu*/
     header .logo-and-menu{
         background: #ff6600;
+        
     }
     header .logo-and-menu .logo{
         margin: 7px 0px 0px 10px;
-        padding: 15px 0px;
+        padding: 15px 0px; 
         float: left;
     }
     header .logo-and-menu .main-menu{
-        margin: 17px 0px 0px 0px;
-        padding: 15px 0px;
         float: right;
     }
     .logo-and-menu .container{
@@ -531,51 +530,84 @@ input.placeholder, textarea.placeholder, .wpcf7 .watermark { color: #b0b0b0; }
 /* -------------------------------------------------- */
     /* have to include mycustom.js to make dropdown menu working */
 
-    nav.main-menu ul{
-        padding: 0px;
-        z-index: 10;
-        position: relative;
-    }
-    nav.main-menu ul li{
-        list-style-type: none;
-        display: inline;
-        margin: 0px;
-        padding: 0px;
-    }
-    nav.main-menu ul li a{
-        color: #ffffff;
+    nav.main-menu ul.menu-nav{
         font-size: 14px;
-        margin: 0px;
-        padding: 35px 12px;
     }
-    nav.main-menu ul li a:hover, nav.main-menu ul li.current-menu-item a{
-        color: #ffff00;
-        background: #29a329;
-        border-bottom: 6px solid #ffff00;
+    nav.main-menu ul.menu-nav li{
+        float: left; 
+        list-style-type: none; 
+        margin-right: 1px;
+        margin-left: 0px;
     }
-    nav.main-menu li.menu-item-13 ul{
-        margin-left: 163px;
+    nav.main-menu ul.menu-nav li a{
+        text-decoration: none; color: #fff; 
+        padding: 38px 12px 32px 12px; 
+        height: 92px; 
+        line-height: 92px;
+        border-bottom: 6px solid transparent; 
     }
-    
-    nav.main-menu li.menu-item-11 ul{
-        margin-left: 460px;
+    nav.main-menu ul.menu-nav li a:hover, nav.main-menu ul.menu-nav li:hover, 
+    nav.main-menu ul li.current-menu-item a, nav.main-menu ul li.current-page-parent a,
+    nav.main-menu ul li.current-menu-parent a, nav.main-menu ul li.current-page-ancestor a, 
+    nav.main-menu ul li.current-menu-ancestor a
+    {
+        background: #29A329; color: #ffff00;
     }
-    nav.main-menu ul ul.sub-menu{
-        margin-top: 39px;
-        background: #29a329; 
-        position: absolute;
-        z-index: 110;
+    nav.main-menu ul.menu-nav li a:hover, nav.main-menu ul li.current-menu-item a,
+    nav.main-menu ul li.current-page-parent a, nav.main-menu ul li.current-menu-parent a,
+    nav.main-menu ul li.current-page-ancestor a, nav.main-menu ul li.current-menu-ancestor a
+    {
+        border-bottom: 6px solid #ffff00; 
     }
 
-    nav.main-menu ul ul li a{
-        display: block;
-        font-size: 12px;
-        padding: 3px 12px;
+    nav.main-menu ul li.current-menu-parent li.current-menu-item a,
+    nav.main-menu ul li.current-page-parent li.current-menu-item a,
+    nav.main-menu ul li.current-menu-ancestor li.current-menu-parent a,
+    nav.main-menu ul li.current-page-ancestor li.current-page-parent a,
+    nav.main-menu ul li.current-menu-ancestor li.current-menu-parent li.current-menu-item a,
+    nav.main-menu ul li.current-page-ancestor li.current-page-parent li.current-page-item a{
+       color: #ffff00;
     }
-    nav.main-menu ul ul li a:hover, nav.main-menu ul ul li.current-menu-item a{
-        color: #ffff00;
-        background: transparent;
-        border-bottom: none;
+    nav.main-menu ul li.current-menu-parent li.current-menu-item li a,
+    nav.main-menu ul li.current-page-parent li.current-menu-item li a,
+    nav.main-menu ul li.current-menu-ancestor li.current-menu-parent li a,
+    nav.main-menu ul li.current-page-ancestor li.current-page-parent li a{
+       color: #ffffff;
+    }
+
+    /*  DropDown First Menu  */
+    nav.main-menu ul.menu-nav li ul{
+        font-size: 12px;
+        margin: 0px 0px;
+        position: absolute;
+        background: #29A329;
+        width: 180px;
+        z-index: 30;
+    }
+    nav.main-menu ul.menu-nav li ul li{
+        float: none;
+        display: block;
+    }
+    nav.main-menu ul.menu-nav li ul li a{
+        padding: 5px 12px;
+        height: 25px;
+        color: #ffffff;
+        line-height: 25px;
+        border-bottom: transparent;
+    }
+    nav.main-menu ul.menu-nav li ul li a:hover, 
+    nav.main-menu ul.menu-nav li ul li.current-menu-item a:hover{
+        border-bottom: transparent;
+    }
+
+    /*  DropDown Second Menu */
+    nav.main-menu ul.menu-nav li ul li ul{
+        margin: -25px 180px;
+        position: absolute;
+        border-left: 1px solid #ffffff;
+    }
+    nav.main-menu ul.menu-nav li ul li ul li{
+        width: 180px;
     }
     /* -------------------------------------------------- */
     /* Slideshow
@@ -585,6 +617,10 @@ input.placeholder, textarea.placeholder, .wpcf7 .watermark { color: #b0b0b0; }
         height:397px;
         overflow: hidden;
         z-index: 0;
+    }
+    #feature-slide img{
+        position: absolute;
+        z-index: 3;
     }
     /* Slide Nav */
     .slide-nav{

@@ -48,14 +48,6 @@
                     </div>
                     <nav class="main-menu">
                     	<?php echo sp_main_navigation(); ?>
-                        <!--<ul>
-                            <li><a href="#">HOME</a></li>
-                            <li><a href="#">ABOUT US</a></li>
-                            <li><a href="#">SERVICES</a></li>
-                            <li><a href="#">RESEARCH AND ANALYSIS</a></li>
-                            <li><a href="#">PRODUCTS</a></li>
-                            <li><a href="#">CONTACT US</a></li>
-                        </ul> -->
                     </nav>  
                 </div>
                 <!-- end class container -->
