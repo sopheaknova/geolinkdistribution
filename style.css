@@ -914,12 +914,18 @@ input.placeholder, textarea.placeholder, .wpcf7 .watermark { color: #b0b0b0; }
     padding-bottom: 20px;
     border-bottom: 1px dotted #ccc;
 }
+.item-post ul li #year{
+    background: #00002B;
+    color: #fff;
+    padding: 8px 39px 8px 38px;
+}
 .item-post ul li:last-child{
     border-bottom: none;
 }
 .item-post ul li:first-child{
     padding-top: 0px;
 }
+
 .post-info{
     float: left;
     width: 18%;

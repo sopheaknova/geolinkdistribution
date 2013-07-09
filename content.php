@@ -9,7 +9,7 @@
 		<span class="post-info">
 		<?php echo get_the_date('F d');?>
 		<hr >
-		<?php echo get_the_date('Y');?>
+		<span id="year"><?php echo get_the_date('Y');?></span>
 		</span>
 
 		<span class="post-desc">

@@ -1,4 +1,4 @@
-<?php global $smof_data; ?>
+
 <?php
 /*
 Template Name: Testimonial
