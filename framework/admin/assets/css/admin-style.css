@@ -155,9 +155,10 @@ border-radius: 2px;
 #of_container #of-nav li.stylingoptions a{ background-image:url(../images/icon-paint.png);}
 #of_container #of-nav li.exampleoptions a{ background-image:url(../images/icon-docs.png);}
 #of_container #of-nav li.homesettings a{ background-image:url(../images/icon-home.png);}
-#of_container #of-nav li.contact a{ background-image:url(../images/icon-map.png);}
-#of_container #of-nav li.popteaourtop12 a{ background-image:url(../images/special-offer.png); }
-#of_container #of-nav li.popteamenu a{ background-image:url(../images/icon-drink-menu.png); }
+#of_container #of-nav li.contactus a{ background-image:url(../images/icon-map.png);}
+#of_container #of-nav li.services a{ background-image:url(../images/service_icon.jpg); }
+#of_container #of-nav li.products a{ background-image:url(../images/product-icon.jpg); }
+#of_container #of-nav li.testimonial a{ background-image: url(../images/icon-edit.png);}
 #of_container #of-nav li.sidebarsettings a{ background-image:url(../images/icon-sidebar.png);}
 #of_container #of-nav li.backupoptions a {background: url(../images/icon-backup.png) no-repeat;}
 #of_container #of-nav li.advancedsettings a {background: url(../images/wrench16.png) no-repeat;}

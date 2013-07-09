@@ -41,8 +41,8 @@ if( function_exists( 'wp_get_theme' ) ) {
 
 
 define( 'SMOF_VERSION', '1.4.4' );
-define( 'ADMIN_PATH', SP_BASE_DIR . 'framework/admin/' );
-define( 'ADMIN_DIR', SP_BASE_URL . 'framework/admin/' );
+define( 'ADMIN_PATH', SP_BASE_DIR . 'framework/admin/' ); // change path for plugin
+define( 'ADMIN_DIR', SP_BASE_URL . 'framework/admin/' );  // change path for plugin
 define( 'LAYOUT_PATH', ADMIN_PATH . 'layouts/' );
 define( 'THEMENAME', $theme_name );
 /* Theme version, uri, and the author uri are not completely necessary, but may be helpful in adding functionality */

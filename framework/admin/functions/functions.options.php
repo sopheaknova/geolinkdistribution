@@ -153,7 +153,7 @@ $of_options[] = array( 	"name" 		=> "Tracking Code",
 $of_options[] = array( 	"name" 		=> "Footer Text",
 						"desc" 		=> "",
 						"id" 		=> "footer_text",
-						"std" 		=> "© 2013 Popteacambodia.com .",
+						"std" 		=> "GEOLINK DISTRIBUTION. Owned by GEOLINK GROUP. © 2013 All Right Reserved.",
 						"type" 		=> "textarea"
 				);
 				
@@ -193,115 +193,55 @@ $of_options[] = array( "name" => 'timeout',
 					"type" => "text",
 					);*/
 
-// Pop Tea Top 12
+// Service Page
 
-$of_options[] = array( "name" => "Poptea Our Top 12",
+$of_options[] = array( "name" => "Services",
 					"type" => "heading");
 
-$of_options[] = array( "name" => 'Select Page Our Top 12',
-					"id" => "page_special",
+$of_options[] = array( "name" => 'Select Page Services',
+					"id" => "page_service",
 					"type" => "select",
 					"options" => $of_pages
 					);
-$of_options[] = array( "name" => 'Top 12 products',
-					"id" => "cat_special",
-					"type" => "select",
-					"desc" => "Select Category that you want to show as TOP 12",
-					"options" => $of_cats
-					);
-					
-$of_options[] = array( "name" => "Title of Top 12 products",
-					"id" => "title_top_12",
-					"std" => "OUR TOP 12",
-					"desc" => "Put the title of Our Top 12",
-					"type" => "text"
-					);
-$of_options[] = array( "name" => "Number of products",
-					"id" => "num-post-top-12",
-					"std" => "8",
-					"desc" => "Limit number of posts to display Our Top 12",
+
+$of_options[] = array( "name" => "Number of Sub Page Service",
+					"id" => "num-sub-service",
+					"std" => "6",
+					"desc" => "Limit number of posts to display Page Services",
 					"type" => "text"
 					);					
 
 
-// Pop Tea Menu
+// Products Page
 
-$of_options[] = array( "name" => "Poptea Menu",
+$of_options[] = array( "name" => "Products",
 					"type" => "heading");
 
-$of_options[] = array( "name" => 'Select Page Menu',
-					"id" => "page_menu",
+$of_options[] = array( "name" => 'Select Page Products',
+					"id" => "page_product",
 					"type" => "select",
 					"options" => $of_pages
 					);
-					
-$of_options[] = array( "name" => 'Select Category Menu Option 1',
-					"id" => "cat_menu_opt_1",
-					"type" => "select",
-					"options" => $of_cats
-					);
-					
-$of_options[] = array( "name" => 'Select Category Menu Option 2',
-					"id" => "cat_menu_opt_2",
-					"type" => "select",
-					"options" => $of_cats
-					);					
 
-	// Choose Size and Sweetness
-$of_options[] = array( "name" => 'Setup cup size',
-					"desc" => "",
-					"id" => "introduction",
-					"std" => "<h3 style=\"margin: 0 0 10px;\">Setup cup size</h3>",
-					"icon" => true,
-					"type" => "info",
-					);
-	
-$of_options[] = array( "name" => "Input text for Title Size",
-					"id" => "txt_title_size",
-					"std" => "",
-					"desc" => "(Optional): If you don't input. Default: Choose your size",
+$of_options[] = array( "name" => "Number of Sub Page Products",
+					"id" => "num-sub-product",
+					"std" => "6",
+					"desc" => "Limit number of posts to display Page Products",
 					"type" => "text"
-					);
-$of_options[] = array( 	"name" 		=> "Icon Size or Capacity",
-						"desc" 		=> "Upload a 16px x 16px Png/Gif image that represent Size.",
-						"id" 		=> "icon_size",
-						"std" => SP_BASE_URL . "images/capacity-tea.png",
-						"mod" => "min",
-						"type" 		=> "upload"
-				);
-$of_options[] = array( "name" => "Choose Your Size Options",
-					"desc" => "Capacity of Poptea e.g: 500cc or 700cc..",
-					"id" => "addoption_size",
-					"std" => "",
-					"type" => "addoption");
+					);				
 
 
-$of_options[] = array( "name" => 'Setup Sweetness or Sugar',
-					"desc" => "",
-					"id" => "introduction",
-					"std" => "<h3 style=\"margin: 0 0 10px;\">Setup Sweetness or Sugar</h3>",
-					"icon" => true,
-					"type" => "info",
+// Testimonial Page
+
+$of_options[] = array( "name" => "Testimonial",
+					"type" => "heading");
+
+$of_options[] = array( "name" => 'Select Page Testimonial',
+					"id" => "page_testimonial",
+					"type" => "select",
+					"options" => $of_pages,
+					"desc" => "Just select page Testimonial to display.",
 					);
-					
-$of_options[] = array( "name" => "Input text for Title Sweetness",
-					"id" => "txt_title_sweet",
-					"std" => "",
-					"desc" => "(Optional): If you don't input. Default: Choose your sweetness",
-					"type" => "text"
-					);
-$of_options[] = array( 	"name" 		=> "Icon Sweetness",
-						"desc" 		=> "Upload a 16px x 16px Png/Gif image that represent Sweetness.",
-						"id" 		=> "icon_sweet",
-						"std" => SP_BASE_URL . "images/sugar_cube.png",
-						"mod" => "min",
-						"type" 		=> "upload"
-				); 
-$of_options[] = array( "name" => "Choose Your Sweetness Options",
-					"desc" => "Sweetness of Poptea e.g: 0% free , 50% sweet, 100% sweet(normal), 150% sweet.",
-					"id" => "addoption_sweet",
-					"std" => "",
-					"type" => "addoption");
 
 //Sidebar Settings
 
@@ -316,10 +256,10 @@ $of_options[] = array( "name" => "Sidebar Options",
 																	
 // Contact
 
-$of_options[] = array( "name" => "Contact",
+$of_options[] = array( "name" => "Contact Us",
 					"type" => "heading");
 
-$of_options[] = array( "name" => 'Select Page Contact',
+$of_options[] = array( "name" => 'Select Page Contact Us',
 					"id" => "page_contact",
 					"type" => "select",
 					"options" => $of_pages
@@ -339,45 +279,60 @@ $of_options[] = array( "name" => "Longitude",
 					"type" => "text"
 					);										
 					
-$of_options[] = array( "name" => "Address",
-					"desc" => "Enter your company or organization address",
-					"id" => "address",
-					"std" => "Phnom Penh Tower 10th floor 445, Preah Monivong Boulevard, Phnom Penh - Cambodia",
+$of_options[] = array( "name" => "No. & Str.",
+					"desc" => "No.41-43, Norodom Blvd",
+					"id" => "num-street",
+					"std" => "No.41-43, Norodom Blvd",
+					"type" => "text"
+					);
+
+$of_options[] = array( "name" => "Commune & District",
+					"desc" => "Sankat Phsar Thmey III, Khan Daun Penh,",
+					"id" => "commune-district",
+					"std" => "Sankat Phsar Thmey III, Khan Daun Penh,",
 					"type" => "text"
 					);	
+
+$of_options[] = array( "name" => "City & Country",
+					"desc" => "Phnom Penh, Cambodia",
+					"id" => "city-country",
+					"std" => "Phnom Penh, Cambodia",
+					"type" => "text"
+					);
+
 					
 $of_options[] = array( "name" => "Telephone line 1",
-					"desc" => "",
+					"desc" => "+855 23 222 399",
 					"id" => "tel_1",
-					"std" => "+855 23 955 500",
+					"std" => "+855 23 222 399",
 					"type" => "text"
 					);	
 					
 $of_options[] = array( "name" => "Telephone line 2",
-					"desc" => "",
+					"desc" => "+855 23 222 399",
 					"id" => "tel_2",
-					"std" => "+855 77 222 677",
+					"std" => "+855 23 222 399",
 					"type" => "text"
 					);																								
 					
-$of_options[] = array( "name" => "Business hours line 1",
-					"desc" => "",
-					"id" => "opent_time_1",
-					"std" => "Mon - Fri / 8pm to 19pm",
-					"type" => "text"
-					);
-
-$of_options[] = array( "name" => "Business hours line 2",
-					"desc" => "",
-					"id" => "opent_time_2",
-					"std" => "Sat - Sun / 8pm to 17pm",
+$of_options[] = array( "name" => "FAX",
+					"desc" => "+855 23 222 199",
+					"id" => "fax",
+					"std" => "+855 23 222 199",
 					"type" => "text"
 					);					
 					
 $of_options[] = array( "name" => "Email",
-					"desc" => "",
+					"desc" => "info@domain.com.kh",
 					"id" => "email",
-					"std" => "info@popteacambodia.com",
+					"std" => "info@domain.com.kh",
+					"type" => "text"
+					);
+
+$of_options[] = array( "name" => "Website",
+					"desc" => "www.domain.com.kh",
+					"id" => "website",
+					"std" => "www.domain.com.kh",
 					"type" => "text"
 					);	
 

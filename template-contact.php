@@ -112,18 +112,29 @@ if(isset($_POST['btnsubmit'])) {
         <!-- end section -->
         <section id="contact-info">
             <div class="contact-address">
-            	<?php //if (have_posts()) while ( have_posts() ): the_post(); ?>
-			    <?php //the_content(); ?>
-		        <?php //endwhile; ?> 
                 <h2><span class="white-back">Contact Info</span> <span class="border-italic"></span></h2>
                 <ul>
-                    <li>No.41-43, Norodom Blvd</li>
-                    <li>Sankat Phsar Thmey III, Khan Daun Penh,</li>
-                    <li>Phnom Penh, Cambodia</li>
-                    <li>Phone : +855 23 222 399</li>
-                    <li>FAX : +855 23 222 199</li>
-                    <li>Email : info@domain.com.kh</li>
-                    <li>Website : www.domain.com.kh</li>
+                	<?php if(trim($smof_data['num-street'])!==''){ ?>
+                    <li><?php echo $smof_data['num-street'];?></li>
+                    <?php } ?>
+                    <?php if(trim($smof_data['commune-district'])!==''){ ?>
+                    <li><?php echo $smof_data['commune-district'];?></li>
+                    <?php } ?>
+                    <?php if(trim($smof_data['city-country'])!==''){ ?>
+                    <li><?php echo $smof_data['city-country'];?></li>
+                    <?php } ?>
+                    <?php if(trim($smof_data['tel_1'])!==''||trim($smof_data['tel_2'])!==''){ ?>
+                    <li>Phone : <?php echo $smof_data['tel_1']; echo $smof_data['tel_2']===''?'':' / '.$smof_data['tel_2'];?></li>
+                    <?php } ?>
+                    <?php if(trim($smof_data['fax'])!==''){ ?>
+                    <li>FAX : <?php echo $smof_data['fax'];?></li>
+                    <?php } ?>
+                    <?php if(trim($smof_data['email'])!==''){ ?>
+                    <li>Email : <?php echo $smof_data['email'];?></li>
+                    <?php } ?>
+                    <?php if(trim($smof_data['website'])!==''){ ?>
+                    <li>Website : <?php echo $smof_data['website'];?></li>
+                    <?php } ?>
                 </ul>
             </div>
             <div class="contact-mail">

@@ -56,7 +56,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
-    color: #00002b!important;
+    color: #00002b;
 }
 h3, h4, h5 { font-weight: 600; }
 
@@ -70,7 +70,7 @@ a, a > * {
             transition: background-color .2s ease, border .2s ease, color .2s ease, opacity .2s ease-in-out;
 }
 
-a:hover, a > *:hover { color: #f9b927; }
+a:hover, a > *:hover { color: #FF6600; }
 
 hr {
     background: #d0d0d0;
@@ -792,7 +792,7 @@ input.placeholder, textarea.placeholder, .wpcf7 .watermark { color: #b0b0b0; }
     }
 
     /* -------------------------------------------------- */
-    /* Services Temprary
+    /* Services 
 /* -------------------------------------------------- */
     #list-all-services{
         overflow: hidden;
@@ -809,6 +809,28 @@ input.placeholder, textarea.placeholder, .wpcf7 .watermark { color: #b0b0b0; }
     }
     #list-all-services .item-service img{
         border: 1px solid #ccc;
+    }
+
+/* -------------------------------------------------- */
+    /* Testimonial
+/* -------------------------------------------------- */  
+    #testimonial-desc{
+        margin: 20px 20px 0px 20px;
+    }
+    #list-testimonial{
+        list-style-type: upper-roman; 
+
+    }
+    #list-testimonial .position{
+        text-align: right;
+        padding-right: 20px;
+        margin-bottom: 10px;
+    }
+    #list-testimonial h4, #list-testimonial h3, #list-testimonial h5{
+        margin-bottom: 0px;
+    }
+    #list-testimonial small{
+        font-size: 12px;
     }
     /* -------------------------------------------------- */
     /* Contact
@@ -874,37 +896,76 @@ input.placeholder, textarea.placeholder, .wpcf7 .watermark { color: #b0b0b0; }
         width:100px;
         background: #111111;
     }
-        
-        
+
+/* ---------------------------------------------------------------------- */
+/* Blog / Category / Article
+/* ---------------------------------------------------------------------- */
+
+.cat-content{
+    overflow: hidden;
+}
+.item-image ul{
+    margin-bottom: 10px;
+}
+.item-post ul li{
+    list-style-type: none;
+    margin-left: 0px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    border-bottom: 1px dotted #ccc;
+}
+.item-post ul li:last-child{
+    border-bottom: none;
+}
+.item-post ul li:first-child{
+    padding-top: 0px;
+}
+.post-info{
+    float: left;
+    width: 18%;
+    font-size: 15px;
+    text-align: center;
+    background: #ccc;
+    padding: 5px 0px;
+    
+}
+.post-info hr{
+    height: 1px;
+    background: #5D5D5D;
+    margin: 5px 0px;
+}
+.post-desc{
+    float: right;
+    width: 78%;
+}
+
+/* ---------------------------------------------------------------------- */
+/* Main
+/* ---------------------------------------------------------------------- */
+.main{
+    float: left;
+    width: 610px;
+    margin: 20px 0px 50px 20px;
+}
     /* ---------------------------------------------------------------------- */
     /* Sidebar
 /* ---------------------------------------------------------------------- */
     
-    #sidebar {
+    .side-right{
         float: right;
-        width: 300px;
+        width: 280px;
+        margin: 20px 20px 50px 0px;
     }
-    
-    .sidebar-left #sidebar { float: left; }
-    
-    #home-sidebar{ padding-top: 20px; }
-    .home-sidebar-1, .home-sidebar-2, .home-sidebar-3{
-        float:left;
-        margin-right:20px;
-    }
-    .home-sidebar-1, .home-sidebar-3{
-        width:300px;
-    }
-    .home-sidebar-2{
-        width:340px;
-    }
-    
     /* -------------------------------------------------- */
     /* Widgets
 /* -------------------------------------------------- */
 
-    .widget { margin: 0 0 20px;}
+    /*.widget { margin: 0 0 20px;} */
     /*.widget{ font-size:0.9em; }*/
+
+     .widget-title a, .widget-text h4 a{
+        color: #fff;
+    }
 
         .widget h5{
             font-size:13px;
@@ -1101,12 +1162,6 @@ table tbody tr:hover td {
 }
 .entry-body table{background-color:#fcfcfc;}
         
-
-/* ---------------------------------------------------------------------- */
-/* Gallery
-/* ---------------------------------------------------------------------- */
-
-
 /* ---------------------------------------------------------------------- */
 /* Columns
 /* ---------------------------------------------------------------------- */
@@ -1168,10 +1223,6 @@ table tbody tr:hover td {
     clear: right;
 }
 
-
-/* ---------------------------------------------------------------------- */
-/* Blog / Category / Article
-/* ---------------------------------------------------------------------- */
     
 /* -------------------------------------------------- */
 /* Pagination
@@ -1233,7 +1284,7 @@ border: 1px solid transparent;
 h1 a:hover, h2 a:hover, h3 a:hover, h4 a:hover, h5 a:hover, h6 a:hover,
 #featured-media .caption a:hover, #footer-cols a:hover, #footer-bottom a:hover, #footer-cols .widget .sub-menu li a:hover,
 ul.menu-nav>li.current_page_item>a, ul.menu-nav>li.current-menu-item>a, ul.menu-nav>li.current-menu-parent>a, ul.menu-nav>li.current_page_parent>a{
-    color:#ffff00;!important;
+    color:#FF6600;
 }
 
 /* ---------------------------------------------------------------------- */
@@ -1305,6 +1356,7 @@ ul.menu-nav>li.current_page_item>a, ul.menu-nav>li.current-menu-item>a, ul.menu-
        margin-left: 32px;
        margin-top: 0px;
     }
+
     .widget-text .name-position{
         margin: auto;
         position: relative;
@@ -1315,7 +1367,7 @@ ul.menu-nav>li.current_page_item>a, ul.menu-nav>li.current-menu-item>a, ul.menu-
         margin-bottom: 3px;
     }
     .widget-text .name-position small{
-        font-size: 12px;
+        font-size: 11px;
     }
     /* Widget Latest NEWS Updated */
     .widget-latest-news .latest-news{

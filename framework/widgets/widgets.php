@@ -22,8 +22,8 @@ function sp_widgets_init() {
 		'id' => 'right-sidebar',
 		'before_widget' => '<div id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</div>',
-		'before_title'  => '<h3 class="widget-title">',
-		'after_title'   => '</h3><hr class="green">',
+		'before_title'  => '<h4 class="widget-title">',  // <h3 class="widget-title">
+		'after_title'   => '</h4>', // </h3><hr class="green">
 	));
 	
 	// Footer Widget Area
@@ -32,8 +32,8 @@ function sp_widgets_init() {
 		'id' => 'footer-sidebar',
 		'before_widget' => '<div id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</div>',
-		'before_title'  => '<h3 class="widget-title">',
-		'after_title'   => '</h3>',
+		'before_title'  => '<h4 class="widget-title">', //<h3 class="widget-title">
+		'after_title'   => '</h4>', //</h3>
 	));
 	
 	// Dynamic sidebar generate
@@ -61,6 +61,9 @@ function sp_widgets_init() {
 	require_once ( SP_BASE_DIR . 'framework/widgets/contact-widget.php' );
 	require_once ( SP_BASE_DIR . 'framework/widgets/postslist-widget.php' );
 	require_once ( SP_BASE_DIR . 'framework/widgets/cp-newproduct-widget.php' );
+	require_once ( SP_BASE_DIR . 'framework/widgets/cp-testimonial.php' );
+	require_once ( SP_BASE_DIR . 'framework/widgets/cp-lastest-news-updated.php' );
+	require_once ( SP_BASE_DIR . 'framework/widgets/image-link.php' );
 	
 	// Register widgets
 	register_widget( 'sp_text_image_widget' );
@@ -70,6 +73,9 @@ function sp_widgets_init() {
 	register_widget( 'sp_contact_info_widget' );
 	register_widget( 'sp_post_list_widget' );
     register_widget( 'sp_custom_list_widget' );
+    register_widget( 'sp_post_testimonial_widget' );
+    register_widget( 'sp_latest_news_updated_widget');
+    register_widget( 'sp_image_link_widget');
 }
 add_action('widgets_init', 'sp_widgets_init');
 

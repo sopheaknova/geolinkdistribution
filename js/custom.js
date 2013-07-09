@@ -5,7 +5,7 @@ jQuery(document).ready(function($){
     jQuery(".main-menu ul ul").css({display: "none"}); // Opera Fix
     jQuery(".main-menu ul li").each(function()
         {   
-        var jQuerysubmeun = jQuery(this).find('ul:first');
+        var jQuerysubmeun = jQuery(this).find('ul:first'); // find only first dropdown menu
         jQuery(this).hover(function()
         {   
            jQuerysubmeun.stop().css({overflow:"hidden", height:"auto", display:"none", paddingTop:0}).slideDown(250, function()

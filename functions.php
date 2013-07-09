@@ -35,13 +35,13 @@ require_once( SP_BASE_DIR . 'framework/functions/setup-theme.php' );
 require_once( SP_BASE_DIR . 'framework/functions/theme-functions.php' );
 
 // Add widgets
-//require_once( SP_BASE_DIR . 'framework/widgets/widgets.php' );
+require_once( SP_BASE_DIR . 'framework/widgets/widgets.php' );
 
 //Custom post type
 require_once( SP_BASE_DIR . 'framework/custom-posts/custom-posts.php' );
 
 // Add Admin Option
-//require_once( SP_BASE_DIR . 'framework/admin/index.php' );
+require_once( SP_BASE_DIR . 'framework/admin/index.php' );
 
 //Add Shortcodes
 /*require_once( SP_BASE_DIR . 'framework/shortcodes/shortcodes.php' );

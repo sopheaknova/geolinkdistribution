@@ -46,7 +46,7 @@ function sp_theme_setup() {
 	add_image_size( 'medium', 211, null, true );
 	add_image_size( 'standart-post',625,235, true);
 	add_image_size( 'widget',71,66, true ); //small widget squere image, cropped
-	add_image_size( 'product-thumb', 200, 200, true );
+	add_image_size( 'service-post', 268, 138, true );
 	add_image_size( 'slideshow-header', 980, 250, true );
 	
 	// Add support for post formats
@@ -247,6 +247,10 @@ function sp_dynamic_js() {
 	}
 }
 add_action( 'wp_head', 'sp_dynamic_js' );
+
+// include fuction
+
+require_once ( SP_BASE_DIR . 'framework/functions/aq_resizer.php' );
 
 /* ---------------------------------------------------------------------- */
 /*	Security

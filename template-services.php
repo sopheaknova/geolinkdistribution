@@ -1,6 +1,6 @@
 <?php
 /*
-Template Name: Services Temprary
+Template Name: Services
 */
 ?>
 <?php get_header(); ?>
@@ -12,43 +12,33 @@ Template Name: Services Temprary
         <section id="services-description">
         	<?php if (have_posts()) while ( have_posts() ): the_post(); ?>
 
-			<?php the_content(); ?>
+			    <?php the_content(); ?>
 			<?php endwhile; ?>
         </section>
         <!-- end section -->
         <section id="list-all-services">
-                   
-              <div class="item-service">
-                <h3>Market Research</h3>
-                <img src="<?php bloginfo('template_url');?>/images/market-1.jpg"  alt="market-1" />
-                <p>Igmaination is more important than knowledge. Knowledge is limited. Imagination encircles the world.</p>
-              </div>
-              <div class="item-service">
-                <h3>Customer Research</h3>
-                <img src="<?php bloginfo('template_url');?>/images/market-2.jpg" alt="market-2" />
-                <p>Igmaination is more important than knowledge. Knowledge is limited. Imagination encircles the world.</p>
-              </div>
-              <div class="item-service">
-                <h3>Strategic Marketing</h3>
-                <img src="<?php bloginfo('template_url');?>/images/market-3.jpg" alt="market-3" />
-                <p>Igmaination is more important than knowledge. Knowledge is limited. Imagination encircles the world.</p>
-              </div>
-              <div class="item-service">
-                <h3>Strategic Marketing</h3>
-                <img src="<?php bloginfo('template_url');?>/images/market-1.jpg" alt="market-1" />
-                <p>Imagination is more important than knowledge. Knowledge is limited. Imagination encircles the world.</p>
-              </div>
-              <div class="item-service">
-                <h3>Strategic Marketing</h3>
-                <img src="<?php bloginfo('template_url');?>/images/market-2.jpg" alt="market-2" />
-                <p>Imagination is more important than knowledge. Knowledge is limited. Imagination encircles the world.</p>
-              </div>
-              <div class="item-service">
-                <h3>Strategic Marketing</h3>
-                <img src="<?php bloginfo('template_url');?>/images/market-3.jpg" alt="market-3" />
-                <p>Imagination is more important than knowledge. Knowledge is limited. Imagination encircles the world.</p>
+
+            <?php 
+                  $get_page = $smof_data['page_service'];
+                  $page = get_page_by_title($get_page);
+
+                  $get_num = $smof_data['num-sub-service'];
+                  $get_num = trim($get_num) == ''? '3' : $get_num;
+              ?>
+
+            <?php query_posts(array('showposts' => $get_num, 'post_parent' => $page->ID, 'post_type' => 'page')); 
+                  while (have_posts()) { the_post(); ?>
+
+                  <div class="item-service">
+                  <h3><a href="<?php the_permalink();?>"><?php the_title();?></a></h3>
+                  <?php if(has_post_thumbnail()){
+                  the_post_thumbnail('service-post');
+                  }?>
+                  <p><?php echo sp_excerpt_length(10);?></p>
               </div>
 
+            <?php } ?>
+              
         </section>
         <!-- end section -->
     </div>

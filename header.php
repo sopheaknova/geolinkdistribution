@@ -1,3 +1,4 @@
+<?php global $smof_data; ?>
 <!DOCTYPE html >
 
 <!--[if IE 7]> <html class="ie7 no-js"  <![endif]-->
@@ -9,7 +10,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <title><?php wp_title('|', true, 'right'); ?></title>
 
-<link rel="shortcut icon" href="<?php bloginfo('template_url');?>/geolink-ico.ico" type="image/x-icon" /> 
+<link rel="profile" href="http://gmpg.org/xfn/11" />
+<link rel="alternate" type="application/rss+xml" title="<?php bloginfo( 'name' ); ?> RSS Feed" href="<?php echo ($smof_data['feedburner'] == '') ? bloginfo( 'rss2_url' ) :  $smof_data['feedburner']; ?>" />
+<link rel="shortcut icon" href="<?php echo ($smof_data['theme_favico'] == '') ? SP_BASE_URL.'geolink-ico.ico' : $smof_data['theme_favico']; ?>" type="image/x-icon" /> 
 
 <!--[if (gte IE 6)&(lte IE 8)]>
   <script type="text/javascript" src="<?php bloginfo('template_url');?>/js/selectivizr-1.0.2/selectivizr.js"></script>
@@ -42,8 +45,13 @@
             <section class="logo-and-menu">
                 <div class="container clearfix">
                     <div class="logo">
-                    	<a href="http://localhost/nova-development/wp/">
-                    		<img src="<?php bloginfo('template_url');?>/images/geolink.png" alt="geolink" />
+                    	<a href="<?php echo home_url('/'); ?>" title="<?php echo esc_attr( get_bloginfo('name', 'display') ); ?>">
+                    		<!--<img src="<?php bloginfo('template_url');?>/images/geolink.png" alt="geolink" /> -->
+                            <?php if($smof_data['theme_logo'] !== '') : ?>
+                            <img src="<?php echo $smof_data['theme_logo']; ?>" alt="<?php echo esc_attr( get_bloginfo('name', 'display') ); ?>">
+                            <?php else: ?>
+                            <h1><?php bloginfo('name'); ?></h1>
+                            <?php endif; ?>
                     	</a>       
                     </div>
                     <nav class="main-menu">

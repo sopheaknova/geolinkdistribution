@@ -19,7 +19,7 @@ class sp_contact_info_widget extends WP_Widget {
 	function __construct() {
 		$id     = 'sp-contact-info';
 		$prefix = THEME_NAME . ': ';
-		$name   = '<span>' . $prefix . __( 'Contact', 'sptheme_widget' ) . '</span>';
+		$name   = '<span>' . $prefix . __( 'Contact Us', 'sptheme_widget' ) . '</span>';
 		$widget_ops = array(
 			'classname'   => 'sp-contact-info',
 			'description' => __( 'Contact information', 'sptheme_widget' )
@@ -40,10 +40,13 @@ class sp_contact_info_widget extends WP_Widget {
 	function form( $instance ) {
 		extract( $instance );
 		$title    = ( isset( $title ) ) ? ( $title ) : ( null );
-		$name     = ( isset( $name ) ) ? ( $name ) : ( null );
+		//$name     = ( isset( $name ) ) ? ( $name ) : ( null );
 		$address  = ( isset( $address ) ) ? ( $address ) : ( null );
-		$phone    = ( isset( $phone ) ) ? ( $phone ) : ( null );
+		$phone_line1    = ( isset( $phone_line1 ) ) ? ( $phone_line1 ) : ( null );
+		$phone_line2    = ( isset( $phone_line2 ) ) ? ( $phone_line2 ) : ( null );
+		$fax   = ( isset( $fax ) ) ? ( $fax ) : ( null );
 		$email    = ( isset( $email ) ) ? ( $email ) : ( null );
+		$websit    = ( isset( $websit ) ) ? ( $websit ) : ( null );
 
 		//HTML to display widget settings form
 		?>
@@ -54,10 +57,10 @@ class sp_contact_info_widget extends WP_Widget {
 			<input class="widefat" id="<?php echo $this->get_field_id( 'title' ); ?>" name="<?php echo $this->get_field_name( 'title' ); ?>" type="text" value="<?php echo esc_attr( $title ); ?>" />
 		</p>
 
-		<p>
+		<!--<p>
 			<label for="<?php echo $this->get_field_id( 'name' ); ?>"><?php _e( 'Name:', 'sptheme_widget' ) ?></label>
 			<input class="widefat" id="<?php echo $this->get_field_id( 'name' ); ?>" name="<?php echo $this->get_field_name( 'name' ); ?>" type="text" value="<?php echo esc_attr( $name ); ?>" />
-		</p>
+		</p> -->
 
 		<p>
 			<label for="<?php echo $this->get_field_id( 'address' ); ?>"><?php _e( 'Address:', 'sptheme_widget' ) ?></label><br />
@@ -65,8 +68,23 @@ class sp_contact_info_widget extends WP_Widget {
 		</p>
 
 		<p>
-			<label for="<?php echo $this->get_field_id( 'phone' ); ?>"><?php _e( 'Phone number:', 'sptheme_widget' ) ?></label>
-			<textarea cols="50" rows="2" id="<?php echo $this->get_field_id( 'phone' ); ?>" name="<?php echo $this->get_field_name( 'phone' ); ?>"><?php echo esc_attr( $phone ); ?></textarea>
+			<label for="<?php echo $this->get_field_id( 'phone_line1' ); ?>"><?php _e( 'Phone Line 1:', 'sptheme_widget' ) ?></label>
+			<input class="widefat" id="<?php echo $this->get_field_id( 'phone_line1' ); ?>" name="<?php echo $this->get_field_name( 'phone_line1' ); ?>" type="text" value="<?php echo esc_attr( $phone_line1 ); ?>" />
+		</p>
+
+		<p>
+			<label for="<?php echo $this->get_field_id( 'phone_line2' ); ?>"><?php _e( 'Phone Line 2:', 'sptheme_widget' ) ?></label>
+			<input class="widefat" id="<?php echo $this->get_field_id( 'phone_line2' ); ?>" name="<?php echo $this->get_field_name( 'phone_line2' ); ?>" type="text" value="<?php echo esc_attr( $phone_line2 ); ?>" />
+		</p>
+
+		<p>
+			<label for="<?php echo $this->get_field_id( 'fax' ); ?>"><?php _e( 'FAX :', 'sptheme_widget' ) ?></label>
+			<input class="widefat" id="<?php echo $this->get_field_id( 'fax' ); ?>" name="<?php echo $this->get_field_name( 'fax' ); ?>" type="text" value="<?php echo esc_attr( $fax ); ?>" />
+		</p>
+
+		<p>
+			<label for="<?php echo $this->get_field_id( 'websit' ); ?>"><?php _e( 'Web Site :', 'sptheme_widget' ) ?></label>
+			<input class="widefat" id="<?php echo $this->get_field_id( 'websit' ); ?>" name="<?php echo $this->get_field_name( 'websit' ); ?>" type="text" value="<?php echo esc_attr( $websit ); ?>" />
 		</p>
 
 		<p>
@@ -74,6 +92,7 @@ class sp_contact_info_widget extends WP_Widget {
 			<textarea cols="50" rows="2" id="<?php echo $this->get_field_id( 'email' ); ?>" name="<?php echo $this->get_field_name( 'email' ); ?>"><?php echo esc_attr( $email ); ?></textarea>
 			<small><?php _e( 'JavaScript anti-spam protection applied', 'sptheme_widget' ); ?></small>
 		</p>
+
 		<?php
 	} // /form
 
@@ -88,10 +107,13 @@ class sp_contact_info_widget extends WP_Widget {
 		$instance = $old_instance;
 
 		$instance['title']   = $new_instance['title'];
-		$instance['name']    = $new_instance['name'];
+		//$instance['name']    = $new_instance['name'];
 		$instance['address'] = $new_instance['address'];
-		$instance['phone']   = $new_instance['phone'];
+		$instance['phone_line1']   = $new_instance['phone_line1'];
+		$instance['phone_line2']   = $new_instance['phone_line2'];
+		$instance['fax']   = $new_instance['fax'];
 		$instance['email']   = $new_instance['email'];
+		$instance['websit']   = $new_instance['websit'];
 
 		return $instance;
 	} // /update
@@ -107,20 +129,48 @@ class sp_contact_info_widget extends WP_Widget {
 		extract( $args );
 		extract( $instance );
 
-		$out = $outAddress = '';
+        $out = $outAddress = '';
+        $isempty = false;
+        $out .= '<div class="collumn col3">';
+        $out .= '<div class="widget-address">';
+
+        //HTML to display output
 
 		//if the title is not filled, no title will be displayed
-		if ( isset( $title ) && '' != $title && ' ' != $title )
+		if ( isset( $title ) && trim($title)!=='' ){
+
 			$out .= $before_title . apply_filters( 'widget_title', $title ) . $after_title;
 
-		//HTML to display output
-		//address
-		if ( ( isset( $name ) && $name ) || ( isset( $address ) && $address ) )
-			$outAddress .= '<div class="address contact-info"><strong>' . $name . '</strong><br />' . $address . '</div>';
+		}else{
 
+			if(trim($address)!==''||trim( $phone_line1 )!==''||trim($fax)!==''||trim($email)!==''||trim($websit)!==''){
+			$out .= '<h4>Office Address:</h4>';
+			}
+
+			
+		}
+
+		//address
+		if ( ( isset( $address ) && trim($address)!=='' ) )
+		
+			$out .= '<p>' . $address . '</p>';
 
 		//email addresses
-		if ( isset( $email ) && $email ) {
+        
+        //phone numbers
+        if ( trim( $phone_line1 )!=='' || trim($phone_line2)!=='' ){
+
+        	$outAddress .= 'Phone : '. $phone_line1;
+            $outAddress .= $phone_line2===''?'</br>':' / '.$phone_line2.'</br>'; 
+
+        }
+        // FAX
+        if ( isset( $fax ) && trim($fax)!=='' ) {
+
+			$outAddress .= 'FAX : ' . $fax.'</br>';
+		}
+        // E-mail
+		if ( isset( $email ) && trim($email)!=='' ) {
 			//$regex = '/(\S+@\S+\.\S+)/i';
 			//preg_match_all( $regex, $email, $emailArray );
 			//if ( $emailArray && is_array( $emailArray ) ) {
@@ -128,27 +178,28 @@ class sp_contact_info_widget extends WP_Widget {
 			//		$email = str_replace( $e, '<a href="#" data-address="' . sp_nospam( $e ) . '" class="email-nospam">' . sp_nospam( $e ) . '</a>', $email );
 			//	}
 			//}
-			$outAddress .= '<div class="email contact-info">E-mail : <a href="#">' . $email . '</a></div>';
+			$outAddress .= 'Email : ' . $email.'</br>';
 		}
+		// Website
+		if ( isset( $websit ) && trim($websit)!=='' ) {
 
-		//phone numbers
-		if ( isset( $phone ) && $phone )
-			if(strpos($phone, '/')){
-				$split = explode('/', $phone);
-		        foreach ($split as $spl) {
-		    	  $outAddress .= '<div class="phone contact-info"><h1>'.$spl.'</h1></div>';
-		        }
-            }
-			else {
-				$outAddress .= '<div class="phone contact-info"><h3>' . $phone . '</h3></div>';
-			}
+			$outAddress .= 'Website : ' . $websit.'</br>';
+		}
 			
 		//output wrapper
-		if ( $outAddress )
-			$out .= '<div class="address-container">' . apply_filters( 'sp_default_content_filters', $outAddress ) . '</div>';
+		if ( $outAddress ){
+
+            $out .= '<p>' . apply_filters( 'sp_default_content_filters', $outAddress ) . '</p>';
+			$isempty = true;
+		}
+
+		$out .= '</div>';
+		$out .= '</div><!-- end .collumn col3 -->';
 
 		if ( $out )
 			echo $before_widget . $out . $after_widget;
+
+
 	} // /widget
 } // /sp_contact_info
 
