@@ -73,40 +73,108 @@ if(isset($_POST['btnsubmit'])) {
 
 <?php get_header(); ?>
 
-<!--Map of Geolink-->
-<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
+<!--Map of Geolink--> 
+<!--<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>   -->
+<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script> 
+
 <script type="text/javascript">					
- /* jQuery(document).ready(function ($)
-	{
-		var latitude = <?php //echo $smof_data['map_lat'];?>;
-		var longitude = <?php //echo $smof_data['map_long'];?>;
-		var myLatlng = new google.maps.LatLng(latitude, longitude);
-		var myOptions = {
-		  scrollwheel: false, 									  
-		  zoom: 16,
-		  center: myLatlng,
-		  mapTypeId: google.maps.MapTypeId.ROADMAP
-		}
-		var map = new google.maps.Map(document.getElementById("contact-map"), myOptions);
-		
-		var image = '<?php //echo SP_BASE_URL;?>images/pop-tea-marker.png';
-		var marker = new google.maps.Marker({
-			position: myLatlng, 
-			map: map,
-			icon: image,
-			animation: google.maps.Animation.DROP,
-			title:"<?php //echo esc_attr( get_bloginfo('name', 'display') ); ?>"
-		});
-	});  */
+
+var directionsDisplay = new google.maps.DirectionsRenderer();
+var directionsService = new google.maps.DirectionsService();
+var map;
+var startDir = new google.maps.LatLng(11.555825,104.921514);
+var endDir = new google.maps.LatLng(11.580742,104.897879);
+
+function initialize() {
+  /*directionsDisplay = new google.maps.DirectionsRenderer();
+  var mapOptions = {
+    zoom: 14,
+    mapTypeId: google.maps.MapTypeId.ROADMAP,
+    center: new google.maps.LatLng(11.570937,104.915829)//haight
+  } 
+  map = new google.maps.Map(document.getElementById('contact-map'), mapOptions);
+  directionsDisplay.setMap(map);    */
+  var locations = [ 
+              ['POP TEA - @Kids City', 11.555825,104.921514, 3],
+              ['POP TEA - Branch 2 - @TK Avenue', 11.580742,104.897879, 2],
+              ['POP TEA - Branch 3 - @PP Night Market', 11.574042,104.927196, 1]
+            ];
+        
+        var image = 'pop-tea-marker.png';
+        
+        var map = new google.maps.Map(document.getElementById('contact-map'), {
+              scrollwheel: false,
+              zoom: 14,
+              center: new google.maps.LatLng(11.570937,104.915829),
+              mapTypeId: google.maps.MapTypeId.ROADMAP
+        });
+        
+        var infowindow = new google.maps.InfoWindow();
+        var marker, i;
+        
+        for (i = 0; i < locations.length; i++) {  
+          marker = new google.maps.Marker({
+            position: new google.maps.LatLng(locations[i][1], locations[i][2]),
+            map: map,
+            icon: image,
+            
+            animation: google.maps.Animation.DROP
+          });  
+
+          // Create a renderer for directions and bind it to the map.
+          var rendererOptions = {
+            map: map,
+
+          }
+          directionsDisplay = new google.maps.DirectionsRenderer(rendererOptions);
+
+          google.maps.event.addListener(marker, 'click', (function(marker, i) {
+            return function() {
+              infowindow.setContent(locations[i][0]);
+              infowindow.open(map, marker);
+            }
+          })(marker, i)); 
+
+
+        }
+}  // end initialize  
+
+function calcRoute() {
+
+  var request = {
+      origin: startDir,
+      destination: endDir,
+      waypoints: [
+            {
+              location: new google.maps.LatLng(11.574042,104.927196),
+              stopover:false
+            },{
+              location: new google.maps.LatLng(11.574042,104.927196),
+              stopover:true
+            }],
+
+      travelMode: google.maps.TravelMode.DRIVING,
+  };
+  directionsService.route(request, function(response, status) {
+    if (status == google.maps.DirectionsStatus.OK) {
+      directionsDisplay.setDirections(response);
+    }
+  });
+}  // end calcRoute
+
+google.maps.event.addDomListener(window, 'load', calcRoute);  
+google.maps.event.addDomListener(window, 'load', initialize);  
+
 </script>
 <div class="wrap-container"> 
     <div class="container clearfix">
 
         <h1 class="title"><?php echo the_title(); ?></h1>
+
         <section id="content-map">
             <h2><span class="white-back">Find us on the map</span> <span class="border-italic"></span></h2>
             <div id="contact-map"> 
-            <img src="<?php bloginfo('template_url');?>/images/geolink-map.jpg" alt="geolink-map" />
+            
             </div>
         </section>
         <!-- end section -->
