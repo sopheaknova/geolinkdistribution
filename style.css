@@ -691,6 +691,48 @@ input.placeholder, textarea.placeholder, .wpcf7 .watermark { color: #b0b0b0; }
         margin: 20px 20px 12px 20px;
         overflow: hidden;
     }
+    
+    /* ========= Clients Slide ========= */
+	.all-clients{
+	    margin: 0px 20px 45px 20px;
+	}
+	.all-clients ul li{
+	    width: 130px;
+	    padding: 5px;
+	    list-style-type: none;
+	}
+	.all-clients .jcarousel-skin-tango .jcarousel-container-horizontal {
+	    width: 880px; 
+	    margin: 0px auto;
+	    padding: 0px;
+	    text-align: center;
+	}
+	.all-clients .jcarousel-skin-tango .jcarousel-clip-horizontal {
+	    width:  880px;
+	    z-index: 30;
+	}
+	.all-clients .jcarousel-skin-tango .jcarousel-item-horizontal {
+	    margin-left: 0;
+	    margin-right: 5px;
+	}
+	
+	.all-clients .jcarousel-skin-tango .jcarousel-direction-rtl .jcarousel-item-horizontal {
+	    margin-left: 5px;
+	    margin-right: 0;
+	}
+	
+	    .all-clients .jcarousel-item{
+		    border: 1px solid #DADADA;
+	    }
+	    .all-clients .jcarousel-item, .all-clients img{
+		    margin-bottom: 0;
+		    width:130px;
+		    height: 62px;
+		    -webkit-border-radius: 6px;
+	           -moz-border-radius: 6px;
+	                border-radius: 6px;
+		    
+	    }
 
 /* -------------------------------------------------- */
 /*  Set Border

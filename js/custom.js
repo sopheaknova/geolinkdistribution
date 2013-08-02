@@ -43,7 +43,11 @@ jQuery(document).ready(function($){
     jQuery('#list-services').jcarousel({   wrap: 'circular'});
 
     // ========= Clients Slide ========= //
-    jQuery('#list-clients').jcarousel({   wrap: 'circular'});
+    jQuery('#list-clients').jcarousel({   
+    			wrap: 'circular',
+    			auto: 5,
+    			animation: 'slow'
+    			});
 
 
     // ========= MENU SLIDES ========= //

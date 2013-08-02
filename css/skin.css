@@ -80,35 +80,6 @@ ul#list-services li:hover{
     background: url(arrow-next-medium.png) no-repeat 0 0;
 }
 
-/* ========= Clients Slide ========= */
-.all-clients{
-    margin: 0px 20px 45px 20px;
-}
-.all-clients ul li{
-    width: 130px;
-    padding: 5px 5px;
-    list-style-type: none;
-}
-.all-clients .jcarousel-skin-tango .jcarousel-container-horizontal {
-    width: 870px; 
-    margin: 0px auto;
-    padding: 0px;
-    text-align: center;
-}
-.all-clients .jcarousel-skin-tango .jcarousel-clip-horizontal {
-    width:  870px;
-    z-index: 30;
-}
-.all-clients .jcarousel-skin-tango .jcarousel-item-horizontal {
-    margin-left: 0;
-    margin-right: 5px;
-}
-
-.all-clients .jcarousel-skin-tango .jcarousel-direction-rtl .jcarousel-item-horizontal {
-    margin-left: 5px;
-    margin-right: 0;
-}
-
 /**
  *  Horizontal Navigation
  */

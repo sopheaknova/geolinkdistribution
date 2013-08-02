@@ -103,11 +103,11 @@
         <!-- end section -->
         <section>
                
-            <?php $query = new WP_Query(array('post_type'=>'sp_client'));?>
+            <?php $query = new WP_Query(array('post_type'=>'sp_client', 'posts_per_page' => 12));?>
             <?php if ( $query->have_posts() ) : ?>
              
             <div class="geo-clients clearfix">
-               <h2><span class="white-back">Some of our clients</span> <span class="border-italic"></span></h2>
+               <h2><span class="white-back">Some our past and current clients</span> <span class="border-italic"></span></h2>
             </div>
 
             <div class="all-clients clearfix">
@@ -115,11 +115,14 @@
             <?php while ( $query->have_posts() ) : $query->the_post(); ?>
 
             <?php $meta_url = get_post_meta($post->ID, 'sp_client_url', true);  ?>
-            <li><a href="<?php echo $meta_url; ?>" target="_blank" >  
-                <?php if (has_post_thumbnail()) {
-                    the_post_thumbnail();
-                }?>
-                </a>
+            <li>
+            <?php 
+            echo ( !empty($meta_url) ) ? '<a href="' . $meta_url . '" target="_blank" >' : '';
+            if (has_post_thumbnail()) {
+            	the_post_thumbnail('client-logo');
+            }
+            echo ( !empty($meta_url) ) ? '</a>' : '';
+            ?>
             </li>
             <?php endwhile; ?>
             </ul>

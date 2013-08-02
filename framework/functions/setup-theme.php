@@ -48,6 +48,7 @@ function sp_theme_setup() {
 	add_image_size( 'widget',71,66, true ); //small widget squere image, cropped
 	add_image_size( 'service-post', 268, 138, true );
 	add_image_size( 'slideshow-header', 980, 250, true );
+	add_image_size( 'client-logo', 130, 62, true );
 	
 	// Add support for post formats
 	add_theme_support( 'post-formats', array( 'video','gallery') ); // aside, gallery, image, link, quote, video, audio,status,chat
