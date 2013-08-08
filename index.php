@@ -65,40 +65,39 @@
                 <p>GeolinkGroup currently services exclusive contracts with DHL, Tiger Beer, and a list of all-star references, all of whom have trusted Geolink with their product 
                 distribution for many years. This assures you that we work in a transparent, efficient, cost-effective and professional manner.</p>
             </div>
+            
+            <div class="service-highlight">
+            <?php
+            	global $smof_data, $page;
+            	$page_selected = $smof_data['page_service'];
+            	$page_id = get_page_by_title('services');
+            	//echo 'page id: ' . $page_id;
+            	$pages = get_pages(array('child_of' => $page_id->ID, 'sort_column' => 'menu_order'));
+            	$count = 0;
+            	
+            	foreach ($pages as $page):
+            		
+            		$count++;
+            		$thumb = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'thumbnail'); 
+                	$image = aq_resize($thumb[0], 86, 86, true);                	
+            ?>
+              <!-- Content Box #1 -->
+              <div class="one_third <?php echo ($count %3 == 0) ? 'last' : ''; ?>">
+              <div class="main-boxes">
+                <h4><a href="<?php echo get_page_link( $page->ID ); ?>"><?php echo $page->post_title; ?></a></h4>
+                <div class="img-box">
+                <a href="#">
+                <img src="<?php echo $image; ?>" alt="" />
+                </a>
+                </div>
+                <p><?php echo sp_excerpt_length_page(25); ?></p>
+                <a href="<?php echo get_page_link( $page->ID ); ?>" class="button"><?php echo $page->post_title; ?></a>
+              </div>  
+              </div><!-- end .one_third -->
+            <?php endforeach; ?>  
+            </div><!-- end .service-highlight -->
 
-            <ul id="list-services" class="jcarousel-skin-tango">
-              <li>
-                <h3>Market Research</h3>
-                <img src="<?php bloginfo('template_url');?>/images/market-1.jpg"  alt="market-1" />
-                <p>Igmaination is more important than knowledge. Knowledge is limited. Imagination encircles the world.</p>
-              </li>
-              <li>
-                <h3>Customer Research</h3>
-                <img src="<?php bloginfo('template_url');?>/images/market-2.jpg" alt="market-2" />
-                <p>Igmaination is more important than knowledge. Knowledge is limited. Imagination encircles the world.</p>
-              </li>
-              <li>
-                <h3>Strategic Marketing</h3>
-                <img src="<?php bloginfo('template_url');?>/images/market-3.jpg" alt="market-3" />
-                <p>Igmaination is more important than knowledge. Knowledge is limited. Imagination encircles the world.</p>
-              </li>
-              <li>
-                <h3>Strategic Marketing</h3>
-                <img src="<?php bloginfo('template_url');?>/images/market-1.jpg" alt="market-1" />
-                <p>Imagination is more important than knowledge. Knowledge is limited. Imagination encircles the world.</p>
-              </li>
-              <li>
-                <h3>Strategic Marketing</h3>
-                <img src="<?php bloginfo('template_url');?>/images/market-2.jpg" alt="market-2" />
-                <p>Imagination is more important than knowledge. Knowledge is limited. Imagination encircles the world.</p>
-              </li>
-              <li>
-                <h3>Strategic Marketing</h3>
-                <img src="<?php bloginfo('template_url');?>/images/market-3.jpg" alt="market-3" />
-                <p>Imagination is more important than knowledge. Knowledge is limited. Imagination encircles the world.</p>
-              </li>
-
-            </ul>
+            
         </section>
         <!-- end section -->
         <section>

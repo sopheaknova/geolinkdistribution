@@ -78,7 +78,17 @@ jQuery(document).ready(function($){
     
       //set the container's height to that of the current slide
       $(this).parent().animate({height: $ht});
-    }       
+    }
+    
+    // Add over to show background on description box
+	$('.main-boxes').hover(
+      function () {
+        $(this).addClass("round-box-gray");
+      }, 
+      function () {
+        $(this).removeClass("round-box-gray");
+      }
+    );       
 
 })
     

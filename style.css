@@ -24,7 +24,7 @@ html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abb
 /* BASIC HTML */
 body {
     background: #FFFFFF;
-    color:#333;/*#7c7c7c;*/
+    color:#666666;/*#7c7c7c;*/
     font: 12px/1.5 Arial, Helvetica, 'Lucida Grande', 'Lucida Sans Unicode', sans-serif;
     -webkit-font-smoothing: antialiased; /* Fix for webkit rendering */
     -webkit-text-size-adjust: 100%;
@@ -852,6 +852,32 @@ input.placeholder, textarea.placeholder, .wpcf7 .watermark { color: #b0b0b0; }
     #list-all-services .item-service img{
         border: 1px solid #ccc;
     }
+    
+    .service-highlight {margin: 0 20px;}
+    .img-box{
+	    border: 1px solid #d2d2d2;
+	    border-radius: 3px;
+	    -webkit-border-radius: 3px;
+		-moz-border-radius: 3px;
+	    padding: 5px;
+	    background-color: #fff;
+	    width: 86px;
+	    height: 86px;
+	    float: right;
+	    margin-right: 10px;
+    }
+    .img-box img{margin-bottom: 0;}	
+    .main-boxes{padding: 10px; margin-bottom: 15px;}
+    .main-boxes a.button{clear:both; margin-top: 5px; border: 1px solid #d2d2d2; background: #fff url(images/arrow_grey.png) no-repeat 94% center; border-radius: 3px; color: #00002b!important; padding-right: 30px;}
+    
+    .round-box-gray{
+		-webkit-border-radius: 6px;
+		-moz-border-radius: 6px;
+		border-radius: 6px;
+	}
+	.round-box-gray{
+		background:#f2f2f2;
+	}
 
 /* -------------------------------------------------- */
     /* Testimonial

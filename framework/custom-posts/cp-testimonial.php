@@ -60,7 +60,7 @@
 				'exclude_from_search' => false,
 				'hierarchical'        => false,
 				'rewrite'             => array( 'slug' => $slug ),
-				'testimonial_position'       => $cpClientPosition['testimonial'],
+				//'testimonial_position'       => $cpClientPosition['testimonial'],
 				'menu_icon'           => SP_BASE_URL . 'framework/assets/img/testimonial.png',
 				'supports'            => $supports,
 				'labels'              => array(

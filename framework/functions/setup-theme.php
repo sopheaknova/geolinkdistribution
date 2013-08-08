@@ -72,9 +72,7 @@ function custom_image_sizes_choose( $sizes ) {
 	return array_merge( $sizes, $custom_sizes );
 }
 
-/*-----------------------------------------------------------------------------------*/
-/*	Add Pretty Photo to default link of post image attache
-/*-----------------------------------------------------------------------------------*/
+// Determine whether WP-prettyPhoto plugin is acivated and assign the result to a constant
 defined('WP_PRETTY_PHOTO_PLUGIN_ACTIVE')
         || define('WP_PRETTY_PHOTO_PLUGIN_ACTIVE', class_exists( 'WP_prettyPhoto' ) );
 
@@ -92,7 +90,8 @@ if ( !WP_PRETTY_PHOTO_PLUGIN_ACTIVE ) {
     function autoinsert_rel_prettyPhoto ($content) {
         global $post;
         $rel = 'wp-prettyPhoto';
-        $image_match = '\.bmp|\.gif|\.jpg|\.jpeg|\.png';
+        //$image_match = '\.bmp|\.gif|\.jpg|\.jpeg|\.png';
+		$image_match = '\.bmp|\.jpg|\.jpeg|\.png';
         $movie_match = '\.mov.*?';
         $swf_match = '\.swf.*?';
         $youtube_match = 'http:\/\/www\.youtube\.com\/watch\?v=[A-Za-z0-9]*';
@@ -171,6 +170,25 @@ function sp_excerpt_length( $length ) {
 
 }
 add_filter('excerpt_length', 'sp_excerpt_length');
+
+// Sets the post excerpt length by word
+function sp_excerpt_length_page( $length ) {
+	global $page;
+	
+	$content = $page->post_content;
+	$words = explode(' ', $content, $length + 1);
+	if(count($words) > $length) :
+		array_pop($words);
+		array_push($words, '...');
+		$content = implode(' ', $words);
+	endif;
+  
+	$content = strip_tags(strip_shortcodes($content));
+  
+	return $content;
+
+}
+add_filter('excerpt_length', 'sp_excerpt_length_page');
 
 
 /* ---------------------------------------------------------------------- */

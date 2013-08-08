@@ -37,7 +37,8 @@ function sp_widgets_init() {
 	));
 	
 	// Dynamic sidebar generate
-	$generate_sidebars = $data['sidebar_options']; 
+	/*
+$generate_sidebars = $data['sidebar_options']; 
 	if($generate_sidebars){
 		foreach ($generate_sidebars as $sidebar) { 
 			if ( function_exists('register_sidebar') )
@@ -52,6 +53,7 @@ function sp_widgets_init() {
 			));
 		}
 	}
+*/
 	
 	// Addon widgets		
 	require_once ( SP_BASE_DIR . 'framework/widgets/text-image-widget.php' );

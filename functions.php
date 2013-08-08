@@ -33,6 +33,7 @@ define( 'SP_ADMIN_LIST_THUMB', '64x64' ); //thumbnail size (width x height) on p
 // Add setup functions
 require_once( SP_BASE_DIR . 'framework/functions/setup-theme.php' );
 require_once( SP_BASE_DIR . 'framework/functions/theme-functions.php' );
+require_once( SP_BASE_DIR . 'framework/functions/aq_resizer.php' );
 
 // Add widgets
 require_once( SP_BASE_DIR . 'framework/widgets/widgets.php' );
