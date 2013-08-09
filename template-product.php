@@ -19,26 +19,36 @@ Template Name: Product
         <!-- end section -->
         <section id="list-all-services">
 
-              <?php 
-                    $get_page = $smof_data['page_product'];
-                    $page = get_page_by_title($get_page);
-
-                    $get_num = $smof_data['num-sub-product'];
-                    $get_num = trim($get_num) == ''? '3' : $get_num;
-              ?>
-             
-              <?php query_posts(array('showposts' => $get_num, 'post_parent' => $page->ID, 'post_type' => 'page')); 
-              while (have_posts()) { the_post(); ?>
-
-              <div class="item-service">
-              <h3><a href="<?php the_permalink();?>"><?php the_title();?></a></h3>
-              <?php if(has_post_thumbnail()){
-              the_post_thumbnail('service-post');
-              }?>
-              <?php echo sp_excerpt_length(10);?>
-              </div>
-
-              <?php } ?>
+			<div class="service-highlight">
+            <?php
+            	global $smof_data;
+            	$page_selected = $smof_data['page_product'];
+            	$page_id = get_page_by_title($page_selected);
+            	//echo 'page id: ' . $page_id;
+            	$pages = get_pages(array('child_of' => $page_id->ID, 'sort_column' => 'menu_order'));
+            	$count = 0;
+            	
+            	foreach ($pages as $page):
+            		
+            		$count++;
+            		$thumb = wp_get_attachment_image_src( get_post_thumbnail_id($page->ID), 'thumbnail'); 
+                	$image = aq_resize($thumb[0], 86, 86, true);               	
+            ?>
+              <!-- Content Box #1 -->
+              <div class="one_third <?php echo ($count %3 == 0) ? 'last' : ''; ?>">
+              <div class="main-boxes">
+                <h4><a href="<?php echo get_page_link( $page->ID ); ?>"><?php echo $page->post_title; ?></a></h4>
+                <div class="img-box">
+                <a href="#">
+                <img src="<?php echo $image; ?>" alt="<?php echo $page->post_title; ?>"/>
+                </a>
+                </div>
+                <p><?php echo sp_excerpt_length_page(25); ?></p>
+                <a href="<?php echo get_page_link( $page->ID ); ?>" class="button"><?php echo $page->post_title; ?></a>
+              </div>  
+              </div><!-- end .one_third -->
+            <?php endforeach; ?>  
+            </div><!-- end .service-highlight -->	
 
         </section>
         <!-- end section -->

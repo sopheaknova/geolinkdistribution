@@ -21,7 +21,7 @@
           <?php endwhile; ?>
           </div>
           <!-- end class feature-slide -->
-          <?php endif; ?> 
+          <?php endif; wp_reset_query(); ?> 
           <div class="slide-nav">
              <a id="slide-prev" href="">
                 <img src="<?php bloginfo('template_url');?>/images/arrow-prev-big.png" alt="prev" /></a>
@@ -68,9 +68,9 @@
             
             <div class="service-highlight">
             <?php
-            	global $smof_data, $page;
+            	global $smof_data;
             	$page_selected = $smof_data['page_service'];
-            	$page_id = get_page_by_title('services');
+            	$page_id = get_page_by_title($page_selected);
             	//echo 'page id: ' . $page_id;
             	$pages = get_pages(array('child_of' => $page_id->ID, 'sort_column' => 'menu_order'));
             	$count = 0;
@@ -78,8 +78,8 @@
             	foreach ($pages as $page):
             		
             		$count++;
-            		$thumb = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'thumbnail'); 
-                	$image = aq_resize($thumb[0], 86, 86, true);                	
+            		$thumb = wp_get_attachment_image_src( get_post_thumbnail_id($page->ID), 'thumbnail'); 
+                	$image = aq_resize($thumb[0], 86, 86, true);               	
             ?>
               <!-- Content Box #1 -->
               <div class="one_third <?php echo ($count %3 == 0) ? 'last' : ''; ?>">
@@ -87,7 +87,7 @@
                 <h4><a href="<?php echo get_page_link( $page->ID ); ?>"><?php echo $page->post_title; ?></a></h4>
                 <div class="img-box">
                 <a href="#">
-                <img src="<?php echo $image; ?>" alt="" />
+                <img src="<?php echo $image; ?>" alt="<?php echo $page->post_title; ?>"/>
                 </a>
                 </div>
                 <p><?php echo sp_excerpt_length_page(25); ?></p>
