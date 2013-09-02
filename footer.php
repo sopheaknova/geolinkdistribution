@@ -1,34 +1,32 @@
-    <?php global $smof_data; ?>
-    <footer id="footer">
-        <section>
-           <div class="container clearfix">
+<?php
+/**
+ * The template for displaying footer.
+ *
+ * Contains secondary widget areas, footer content and the closing of the
+ * #main and #page div elements.
+ */
 
-              <?php get_sidebar('footer');?>
-           </div>
-           <!-- end class container -->
-        </section>  
-        <section>
-           <div class="container clearfix">
-               <div class="footer-menu">
-                  <?php echo sp_footer_navigation();?>
-                  
-               </div>
-               <?php if(trim($smof_data['footer_text'])!== ''){ ?>
-                
-               <div class="footer-copy">
-                    <p><?php echo $smof_data['footer_text'];?></p>
-               </div>
-                
-               <?php } ?>
-               
-           </div>
-           <!-- end class container -->
-        </section>
-    </footer>
-    <!-- end footer -->
-</div>
-<!-- end class wrapper -->
+global $smof_data ?>
+
+    </div><!-- .container .clearfix -->   
+    </div><!-- #content -->
+    
+    <footer id="footer" role="contentinfo">
+    	
+    	<?php get_sidebar('footer'); ?>
+    	
+        <div class="container clearfix">
+        
+        	<nav id="footer-nav" class="footer-menu" role="navigation">
+        	<?php echo sp_footer_navigation(); ?>
+        	</nav>
+        	<p class="copyright"><?php echo stripslashes($smof_data['footer_text']); ?></p>
+           
+        </div><!-- .container -->
+    </footer><!-- #footer -->
+    
+</div> <!-- #page -->
+<div class="scroll-to-top"><a href="#" title="<?php _e( 'Scroll to top', 'newsplus' ); ?>"></a></div><!-- .scroll-to-top -->
 <?php wp_footer(); ?>
-
 </body>
 </html>

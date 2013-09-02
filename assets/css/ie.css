@@ -1,0 +1,10 @@
+/**
+ * Internet Explorer specific stylesheet
+ *
+ * Include IE specific hacks in this file.
+ */
+
+.secondary-nav li ul,
+.primary-nav li ul {
+ 	border: 1px solid #e5e5e5;
+}

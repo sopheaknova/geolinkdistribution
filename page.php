@@ -1,56 +1,36 @@
-<?php get_header(); ?>
+<?php
+/**
+ * The template for displaying all pages.
+ */
 
-<?php $has_sidebar = sp_check_page_layout(); ?>
+get_header(); ?>
 
-<section id="content" class="clearfix <?php echo sp_check_sidebar_position(); ?>">
-
-<div class="wrap-container"> 
-    <div class="container clearfix">
-
-		<?php if( $has_sidebar ): ?>
-
-		<div class="main">
-
-		<?php if (have_posts()) while ( have_posts() ): the_post(); ?>
-        <div class="page-body">	
-            <h1><?php echo the_title(); ?></h1>
-            
-			<?php the_content(); ?>
-			<div class="clear"></div>
-			<p><?php edit_post_link( __( 'Edit', 'sptheme' ), '', '' ); ?></p>
-        </div>
-
-		<?php endwhile; ?>
-
-		</div>
-	 	<!-- end .main -->
-			
-		<div class="side-right">
-        <?php get_sidebar(); ?>
-        </div>
-
-        <?php else :?>
-
-        <?php if (have_posts()) while ( have_posts() ): the_post(); ?>
-             
-            <?php $getTitle = get_the_title();?>
-        	<h1 class="title"><?php echo ucwords(strtolower($getTitle)); ?></h1>
-            <section id="about-description">
-			<?php the_content(); ?>
-			<div class="clear"></div>
-			<p><?php edit_post_link( __( 'Edit', 'sptheme' ), '', '' ); ?></p>
-
-            </section>
-            <!-- end section -->
-		<?php endwhile; ?>
-
-		<?php endif; ?>
-        
-    </div>
-    <!-- end class container -->
-</div>
-<!-- end class wrap-container -->
-
-</section><!-- end #content -->
-
+    <div id="main" role="main">
+		<?php
+        if ( have_posts() ) :
+			while ( have_posts() ) :
+			the_post(); ?>
+			<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+			<header class="entry-header">
+				<h1 class="entry-title"><?php the_title(); ?></h1>
+			</header>
+				<div class="entry-content">
+					<?php the_content(); ?>
+					<?php wp_link_pages( array( 'before' => '<div class="page-links">' . __( 'Pages:', SP_TEXT_DOMAIN ), 'after' => '</div>' ) ); ?>
+				</div><!-- .entry-content -->
+			</article><!-- #post -->
+		<?php endwhile;
+        else : ?>
+			<article id="post-0" class="post no-results not-found">
+			<header class="entry-header">
+				<h1 class="entry-title"><?php _e( 'Nothing Found', SP_TEXT_DOMAIN ); ?></h1>
+			</header>
+			<div class="entry-content">
+				<p><?php _e( 'It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help.', SP_TEXT_DOMAIN ); ?></p>
+				<?php get_search_form(); ?>
+			</div><!-- .entry-content -->
+			</article><!-- #post-0 -->
+        <?php endif; ?>
+    </div><!-- #main -->
+<?php get_sidebar(); ?>
 <?php get_footer(); ?>

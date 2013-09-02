@@ -2,58 +2,39 @@
 /*
 Template Name: Services
 */
-?>
-<?php get_header(); ?>
-<div class="wrap-container"> 
-    <div class="container clearfix">
-         
-        <?php $getTitle = get_the_title();?>
-        <h1 class="title"><?php echo ucwords(strtolower($getTitle)); ?></h1>
-        <section id="services-description">
-        	<?php if (have_posts()) while ( have_posts() ): the_post(); ?>
 
-			    <?php the_content(); ?>
-			<?php endwhile; ?>
-        </section>
-        <!-- end section -->
-        <section id="list-all-services">
+get_header(); ?>
 
-            <div class="service-highlight">
-            <?php
-            	global $smof_data;
-            	$page_selected = $smof_data['page_service'];
-            	$page_id = get_page_by_title($page_selected);
-            	//echo 'page id: ' . $page_id;
-            	$pages = get_pages(array('child_of' => $page_id->ID, 'sort_column' => 'menu_order'));
-            	$count = 0;
-            	
-            	foreach ($pages as $page):
-            		
-            		$count++;
-            		$thumb = wp_get_attachment_image_src( get_post_thumbnail_id($page->ID), 'thumbnail'); 
-                	$image = aq_resize($thumb[0], 86, 86, true);               	
-            ?>
-              <!-- Content Box #1 -->
-              <div class="one_third <?php echo ($count %3 == 0) ? 'last' : ''; ?>">
-              <div class="main-boxes">
-                <h4><a href="<?php echo get_page_link( $page->ID ); ?>"><?php echo $page->post_title; ?></a></h4>
-                <div class="img-box">
-                <a href="#">
-                <img src="<?php echo $image; ?>" alt="<?php echo $page->post_title; ?>"/>
-                </a>
-                </div>
-                <p><?php echo sp_excerpt_length_page(25); ?></p>
-                <a href="<?php echo get_page_link( $page->ID ); ?>" class="button"><?php echo $page->post_title; ?></a>
-              </div>  
-              </div><!-- end .one_third -->
-            <?php endforeach; ?>  
-            </div><!-- end .service-highlight -->
-              
-        </section>
-        <!-- end section -->
-    </div>
-    <!-- end class container -->
-</div>
-
-<!-- end class wrap-container -->
+    <div id="main" role="main">
+		<?php
+        if ( have_posts() ) :
+			while ( have_posts() ) :
+			the_post(); ?>
+			<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+			<header class="entry-header">
+				<h1 class="entry-title"><?php the_title(); ?></h1>
+			</header>
+				<div class="entry-content">
+					<?php the_content(); ?>
+					<?php 
+						$service_select = $smof_data['service_select']; 
+						$page = get_page_by_path($service_select); // get page by slug name
+						echo sp_child_page_lists($page->ID, 'menu_order', 68, 68);
+					?>
+				</div><!-- .entry-content -->
+			</article><!-- #post -->
+		<?php endwhile;
+        else : ?>
+			<article id="post-0" class="post no-results not-found">
+			<header class="entry-header">
+				<h1 class="entry-title"><?php _e( 'Nothing Found', SP_TEXT_DOMAIN ); ?></h1>
+			</header>
+			<div class="entry-content">
+				<p><?php _e( 'It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help.', SP_TEXT_DOMAIN ); ?></p>
+				<?php get_search_form(); ?>
+			</div><!-- .entry-content -->
+			</article><!-- #post-0 -->
+        <?php endif; ?>
+    </div><!-- #main -->
+<?php get_sidebar(); ?>
 <?php get_footer(); ?>
