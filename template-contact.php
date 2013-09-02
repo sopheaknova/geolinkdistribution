@@ -38,7 +38,7 @@ if(isset($_POST['submitted'])) {
 			
 		if(!isset($hasError)) {
 			$emailTo = $smof_data['email'];
-			$subject = '[Contact Form] From '.$name;
+			$subject = 'From '.$name;
 			$body = "Name: $name \n\nEmail: $email \n\nComments: $messages";
 			$headers = 'From: '.$name.' <'.$emailTo.'>' . "\r\n" . 'Reply-To: ' . $email;
 			

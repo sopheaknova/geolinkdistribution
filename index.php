@@ -23,7 +23,9 @@ get_header(); ?>
 	    	<div class="one-third last">
 		    	<center>
 			    <?php echo $smof_data['owned_by_title'];?>
+			    <a href="<?php echo $smof_data['geolink_group_link']; ?>" target="_blank">
 			    <img src="<?php echo $smof_data['goelink_group_logo'];?>" width="247" height="151" />
+			    </a>
 		    	</center>
 	    	</div>
     	</div>
@@ -33,12 +35,12 @@ get_header(); ?>
 			$page = get_page_by_path($service_select); // get page by slug name
 		?>
     	<div id="services" class="clearfix">
-    	<div class="section-title"><h3>Our Services</h3></div>
+    	<div class="section-title"><h3><?php echo get_the_title($page->ID); ?></h3></div>
     	<?php echo sp_child_page_lists($page->ID, 'menu_order', 68, 68); ?>
     	</div>
     	
     	<div id="clients">
-    	<div class="section-title"><h3>Some our past and current clients</h3></div>
+    	<div class="section-title"><h3><?php echo $smof_data['client_title']; ?></h3></div>
     	<?php echo sp_clients_carousel(8); ?>
     	</div>
     	

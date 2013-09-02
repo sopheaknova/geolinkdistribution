@@ -41,7 +41,7 @@ $meta_boxes[] = array(
 				'2cr'  => '<img src="' . SP_ASSETS_ADMIN . 'images/layout/2cr.png" alt="' . __('Sidebar on the right', 'sptheme_admin') . '" title="' . __('Sidebar on the right', 'sptheme_admin') . '" />',
 				//'3col' => '<img src="' . SP_ASSETS_ADMIN . 'images/layout/3col.png" alt="' . __('Sidebar on left and right', 'sptheme_admin') . '" title="' . __('Sidebar on left and right', 'sptheme_admin') . '" />'
 			),
-			'std'  => '2cr',
+			'std'  => '1col',
 			'desc' => __('select the layout structure for this page.', 'sptheme_admin')
 		),
 		array(

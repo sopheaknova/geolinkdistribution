@@ -231,25 +231,6 @@ caption {
 }
 
 
-/* =Alignment
--------------------------------------------------------------- */
-
-.alignleft {
-	display: inline;
-	float: left;
-	margin: 0 1.5em 1.5em 0;
-}
-.alignright {
-	display: inline;
-	float: right;
-	margin: 0 0 1.5em 1.5em;
-}
-.aligncenter {
-	display: block;
-	margin-bottom: 1.5em;
-}
-
-
 /* =Images
 -------------------------------------------------------------- */
 
@@ -299,4 +280,30 @@ img.wp-smiley {
 	font-size: 1em;
 	line-height: 1.5;
 	margin: 0 0 1.5em;
+}
+
+/* =Alignment
+-------------------------------------------------------------- */
+
+.alignleft {
+	display: inline;
+	float: left;
+	margin: 0 1.5em 1.5em 0;
+}
+.alignright {
+	display: inline;
+	float: right;
+	margin: 0 0 1.5em 1.5em;
+}
+.aligncenter {
+	display: block;
+	margin-bottom: 1.5em;
+}
+
+.alignleft, .alignright, .aligncenter, .alignnone{
+	border: 1px solid #E5E5E5;
+    padding: 5px;
+    -webkit-box-sizing: border-box;
+			-moz-box-sizing: border-box;
+				box-sizing: border-box;
 }

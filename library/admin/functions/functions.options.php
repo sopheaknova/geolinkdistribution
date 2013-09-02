@@ -174,7 +174,21 @@ $of_options[] = array( 	"name" 		=> "Geolink group Logo",
 						"id" 		=> "goelink_group_logo",
 						"std" 		=> SP_ASSETS_THEME . "images/geolink-group-logo.png",
 						"type" 		=> "upload"
-				);	
+				);
+				
+$of_options[] = array( "name" => "Geolink Group Link",
+						"desc" => "e.g: http://www.geolinkgroup.com/",
+						"id" => "geolink_group_link",
+						"std" => "http://www.geolinkgroup.com/",
+						"type" => "text"
+						);	
+						
+$of_options[] = array( "name" => "Section Client Title",
+						"desc" => "e.g: Some our past and current clients",
+						"id" => "client_title",
+						"std" => "Some our past and current clients",
+						"type" => "text"
+						);											
 				
 $of_options[] = array( 	"name" 		=> 'Select Services Page',
 						"desc" 		=> "Select page that present about services to show on homepage",

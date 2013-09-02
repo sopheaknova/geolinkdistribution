@@ -396,7 +396,7 @@ function sp_child_page_lists_basic( $page_id, $menu_order='menu_order', $img_wid
 	$output .= '</div></div>';
 	
 	$output .= '<div class="two-fourth last">';
-	$output .= '<h5><a href="'.get_permalink().'" class="port-'. $col .'-title">' . get_the_title() .'</a></h5>';
+	$output .= '<h5><a href="'.get_permalink().'" class="port-'. $col .'-title">' . $page->post_title .'</a></h5>';
 	$output .= '<p>' . sp_excerpt_length_page(45) . '</p>';
 	$output .= '<a href="' . get_page_link( $page->ID ) . '" class="button theme-color">See more about ' . $page->post_title . '</a>';
 	$output .= '</div>';	

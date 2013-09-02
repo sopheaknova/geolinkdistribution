@@ -105,6 +105,7 @@ function sp_scripts_styles() {
 	
 	if(!is_admin()){
 		//CSS
+		wp_register_style( 'droid-sans', 'http://fonts.googleapis.com/css?family=Droid+Sans', false, SP_THEME_VERSION );
 		wp_register_style( 'sp-theme-styles', SP_BASE_URL . 'style.css', false, SP_THEME_VERSION );
 		wp_register_style( 'sp-base', SP_ASSETS_THEME . 'css/base.css', false, SP_THEME_VERSION );
 		wp_register_style( 'flexslider', SP_ASSETS_THEME . 'css/flexslider.css', array(), '' );
@@ -112,6 +113,7 @@ function sp_scripts_styles() {
 		wp_register_style( 'sp-shortcodes', SP_ASSETS_THEME . 'css/shortcodes.css', false, SP_THEME_VERSION );
 		
 		
+		wp_enqueue_style('droid-sans');
 		wp_enqueue_style('sp-theme-styles');
 		wp_enqueue_style('sp-base');
 		wp_enqueue_style( 'flexslider' );

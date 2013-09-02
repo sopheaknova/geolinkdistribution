@@ -1,7 +1,6 @@
 <?php
 
 //All custom posts
-require_once( SP_BASE_DIR . 'library/custom-posts/cp-portfolio.php' );
 require_once( SP_BASE_DIR . 'library/custom-posts/cp-testimonials.php' );
 require_once( SP_BASE_DIR . 'library/custom-posts/cp-clients.php' );
 
