@@ -314,7 +314,14 @@ $of_options[] = array( "name" => 'Social Networking',
 // Contact
 $of_options[] = array( "name" => "Contact",
 					"type" => "heading");
-					
+
+$of_options[] = array( 	"name" 		=> "Contact cover",
+						"desc" 		=> "Upload a Png/Gif/JPG image that will show on the top of content of contact page. Good size is 960px by 200px",
+						"id" 		=> "contact_cover",
+						"std" 		=> SP_ASSETS_THEME . "images/cover-contact.jpg",
+						"type" 		=> "upload"
+				);
+									
 $of_options[] = array( "name" => "Latitude",
 					"desc" => "Latitude of google map see <a href='http://itouchmap.com'>itouchmap.com</a>",
 					"id" => "map_lat",

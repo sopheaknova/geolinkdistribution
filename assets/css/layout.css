@@ -47,8 +47,6 @@
 	        	box-shadow: 1px 4px 6px 4px #DEDEDE;
 }
 
-	.home #content{padding-top: 0;}
-
 .container{
 	margin: 0 auto;
 	position: relative;
@@ -384,12 +382,17 @@ border-right: 1px solid #2a2a2a;
 		width:960px;
 		height: 390px;
 		overflow: hidden;
-		margin-bottom: 2em;		
+		margin-bottom: 2em;
+		margin-top: -2em;	
 	}
 	
 	/* -------------------------------------------------- */
 	/*	Contact
 	/* -------------------------------------------------- */
+	.contact-cover{
+		margin-top: -2em;
+	}
+	
 	.contact-page label{
 		display: block;
 	}

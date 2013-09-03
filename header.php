@@ -71,5 +71,10 @@ global $smof_data;
         		<div class="home-cover">	
         			<img src="<?php echo $smof_data['home_cover']; ?>" width="960" height="390" />
         		</div>
+        <?php endif; ?>
+        <?php if (is_page_template('template-contact.php')) : ?>
+        		<div class="contact-cover">	
+        			<img src="<?php echo $smof_data['contact_cover']; ?>" width="960" height="200" />
+        		</div>
         <?php endif; ?>		
         <div class="container clearfix">
