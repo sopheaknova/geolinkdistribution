@@ -383,14 +383,14 @@ border-right: 1px solid #2a2a2a;
 		height: 390px;
 		overflow: hidden;
 		margin-bottom: 2em;
-		margin-top: -2em;	
+		margin-top: -2.35em;	
 	}
 	
 	/* -------------------------------------------------- */
 	/*	Contact
 	/* -------------------------------------------------- */
 	.contact-cover{
-		margin-top: -2em;
+		margin-top: -2.35em;
 	}
 	
 	.contact-page label{
