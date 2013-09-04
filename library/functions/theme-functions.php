@@ -4,35 +4,6 @@
 /*	Show main and footer navigation
 /* ---------------------------------------------------------------------- */
 
-if( !function_exists('sp_top_navigation')) {
-
-	function sp_top_navigation() {
-		
-		if ( function_exists ( 'wp_nav_menu' ) )
-			wp_nav_menu( array(
-				'container' => false,
-				'container_class'	 => 'sec-menu clear',
-				'theme_location' => 'secondary',
-				'fallback_cb' => 'sp_top_nav_fallback'
-				) );
-		else
-			sp_top_nav_fallback();	
-	}
-}
-
-if (!function_exists('sp_top_nav_fallback')) {
-	
-	function sp_top_nav_fallback() {
-    	
-		$menu_html = '<ul class="top-menu">';
-		$menu_html .= '<li><a href="'.admin_url('nav-menus.php').'">'.esc_html__('Add Main menu', SP_TEXT_DOMAIN).'</a></li>';
-		$menu_html .= '</ul>';
-		echo $menu_html;
-		
-	}
-	
-}
-
 if( !function_exists('sp_main_navigation')) {
 
 	function sp_main_navigation() {
