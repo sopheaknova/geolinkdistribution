@@ -128,14 +128,6 @@ $of_options[] = array( 	"name" 		=> "Custom Favicon",
 						"type" 		=> "upload"
 				); 				
 				
-				
-$of_options[] = array( 	"name" 		=> "Tracking Code",
-						"desc" 		=> "Paste your Google Analytics (or other) tracking code here. This will be added into the footer template of your theme.",
-						"id" 		=> "google_analytics",
-						"std" 		=> "",
-						"type" 		=> "textarea"
-				);
-				
 $of_options[] = array( 	"name" 		=> "Footer Text",
 						"desc" 		=> "You can use the following shortcodes in your footer text: [wp-link] [theme-link] [loginout-link] [blog-title] [blog-link] [the-year]",
 						"id" 		=> "footer_text",
