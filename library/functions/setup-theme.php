@@ -50,9 +50,8 @@ function sp_theme_setup() {
 
 	// Add navigation menus
 	register_nav_menus( array(
-		'secondary'	=> __( 'Secondary Top Menu', SP_TEXT_DOMAIN ),
 		'primary'	=> __( 'Primary Menu', SP_TEXT_DOMAIN ),
-		'footer'  => __( 'Footer Navigation', SP_TEXT_DOMAIN )
+		'footer'  => __( 'Footer Menu', SP_TEXT_DOMAIN )
 	) );
 
 	// Add support for custom background and set default color

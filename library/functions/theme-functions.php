@@ -3,7 +3,6 @@
 /* ---------------------------------------------------------------------- */
 /*	Show main and footer navigation
 /* ---------------------------------------------------------------------- */
-
 if( !function_exists('sp_main_navigation')) {
 
 	function sp_main_navigation() {
