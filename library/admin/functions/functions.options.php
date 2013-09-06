@@ -154,6 +154,7 @@ $of_options[] = array( 	"name" 		=> 'Select Homepage Content',
 						"options" 	=> $of_pages
 				);				
 				
+/*
 $of_options[] = array( 	"name" 		=> 'Title for Owned by',
 						"desc" 		=> "Write title message to show above logo bellow",
 						"id" 		=> "owned_by_title",
@@ -174,6 +175,7 @@ $of_options[] = array( "name" => "Geolink Group Link",
 						"std" => "http://www.geolinkgroup.com/",
 						"type" => "text"
 						);	
+*/
 						
 $of_options[] = array( "name" => "Section Client Title",
 						"desc" => "e.g: Some our past and current clients",
