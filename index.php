@@ -15,20 +15,9 @@ get_header(); ?>
 	
     <div id="main">
     	
-    	<div id="welcome" class="clearfix">
-	    	<div class="two-third">
-		    	<div class="section-title"><h3><?php echo $title; ?></h3></div>
-		    	<p><?php echo $page_content; ?></p>
-		    	</div>
-	    	<div class="one-third last">
-		    	<center>
-			    <?php echo $smof_data['owned_by_title'];?>
-			    <a href="<?php echo $smof_data['geolink_group_link']; ?>" target="_blank">
-			    <img src="<?php echo $smof_data['goelink_group_logo'];?>" width="247" height="151" />
-			    </a>
-		    	</center>
-	    	</div>
-    	</div>
+    	<div class="section-title"><h3><?php echo $title; ?></h3></div>
+    	<p><?php echo $page_content; ?></p>
+    	</div>	
     	
     	<?php 
 			$service_select = $smof_data['service_select']; 
